@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed&display=swap');
+
+*{
+	font-family: 'Encode Sans Condensed', sans-serif;
+}
+.formi{
+	max-width: 500px;
+	width: 100%;
+	margin: 10px auto;
+	h1 {
+		text-align: center;
+	}
+	label,
+	input {
+		display: block;
+		width: 100%;
+	}
+	label {
+		margin-bottom: 5px;
+		height: 22px;
+	}
+	input {
+		margin-bottom: 20px;
+		padding: 10px;
+		border-radius: 3px;
+		border: 1px solid #777;
+		&.error{
+			border-color: red;
+		}
+	  }
+	  .input-feedback {
+		color: rgb(235, 54, 54);
+		margin-top: 5px;
+		font-size: 14px;
+		margin-bottom: 20px;
+	  }
+	  button {
+		margin: 0 auto;
+		padding: 5px 100px;
+		width: 100%;
+		background: rgb(253, 216, 53);
+		color: rgb(74, 74, 74);
+		border: 1px solid rgb(70, 153, 179);
+		background-color: 250ms;
+		border-radius: 2px;
+		display:block;
+		margin-top: 10px;
+		&:hover{
+			cursor: pointer;
+			background: rgba(253, 216, 53, 0.904);
+			
+		}
+		a{
+			color: rgb(74, 74, 74);
+			&:hover{
+				cursor: pointer;
+				background: rgba(253, 216, 53, 0.904);
+				color: rgb(74, 74, 74);
+			}
+		}
+	  }
+	}
+.MuiDialog-scrollPaper{
+	overflow: scroll;
+}
+.register{
+	width: 400px;
+	overflow: auto;
+	select{
+        width: 100%;
+        padding: 8px;
+        border-radius: 3px;
+        border: 1px solid #777;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+
