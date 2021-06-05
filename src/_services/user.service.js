@@ -56,7 +56,7 @@ function register(user) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(user)
     };
-    
+
     return fetch(`http://localhost:3000/register`, requestOptions).then(handleResponse);
 }
 
@@ -86,7 +86,7 @@ function handleResponse(response) {
             if (response.status === 401) {
                 // auto logout if 401 response returned from api
                 logout();
-                
+
             }
 
             const error = (data && data.message) || response.statusText;

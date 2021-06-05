@@ -13,17 +13,17 @@ const LayoutMode = (
 
     let classess = 'layout-mode__item';
 
-    if(isActive) {
+    if (isActive) {
         classess += ' layout-mode__item--active'
     }
 
-    for(let i = 0; i < len; i ++) {
-        items.push(<div  className={classess} />);
+    for (let i = 0;i < len;i++) {
+        items.push(<div className={classess} />);
     };
 
 
     return (
-        <div className="layout-mode" onClick={() => {click(len)}}>
+        <div className="layout-mode" onClick={() => { click(len) }}>
             {items}
         </div>
     );

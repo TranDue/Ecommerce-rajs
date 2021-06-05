@@ -10,15 +10,15 @@ const SlideDots = (
 ) => {
 
     const dots = [];
-    for(let i = 0; i < len; i++) {
+    for (let i = 0;i < len;i++) {
         let dotClass = 'owl-dot';
 
-        if(activeItem === i) {
+        if (activeItem === i) {
             dotClass += ' active';
         }
 
         dots.push(<button
-            onClick={() => {changeItem(i)}}
+            onClick={() => { changeItem(i) }}
             role="button"
             className={dotClass}><span></span></button>)
     }

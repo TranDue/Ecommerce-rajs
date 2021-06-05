@@ -18,7 +18,7 @@ function login(username, password) {
 
         userService.login(username, password)
             .then(
-                user => { 
+                user => {
                     dispatch(success(user));
                     history.push('/homepage');
                 },
@@ -45,7 +45,7 @@ function register(user) {
 
         userService.register(user)
             .then(
-                user => { 
+                user => {
                     dispatch(success());
                     history.push('/login');
                     dispatch(alertActions.success('Đăng ký thành công'));
@@ -78,14 +78,14 @@ function getAll() {
     function failure(error) { return { type: userConstants.GETALL_FAILURE, error } }
 }
 //my
-function getID(){
-    return dispath=>{
+function getID() {
+    return dispath => {
         dispath(request())
         userService.getById()
-        .then(
-            users=>dispath(success(users)),
-            error=>dispath(failure(error.toString()))
-        );
+            .then(
+                users => dispath(success(users)),
+                error => dispath(failure(error.toString()))
+            );
     }
     function request() { return { type: userConstants.GETID_REQUEST } }
     function success(users) { return { type: userConstants.GETID_SUCCESS, users } }

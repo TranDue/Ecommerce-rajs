@@ -64,7 +64,7 @@ const OrderAdress = () => {
                                 <input
                                     name="name"
                                     type="text"
-                                    placeholder="Nhập số điện thoại"
+                                    placeholder="Nhập tên"
                                     value={values.name}
                                     onChange={handleChange}
                                     onBlur={handleBlur}

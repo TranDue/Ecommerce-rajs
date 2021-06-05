@@ -21,7 +21,7 @@ export function configureFakeBackend() {
                     if (filteredUsers.length) {
                         // if login details are valid return user details and fake jwt token
                         let user = filteredUsers[0];
-                        
+
                         let responseJson = {
                             id: user.id,
                             username: user.username,
@@ -45,13 +45,13 @@ export function configureFakeBackend() {
                 //         return user.username === params.username && user.password === params.password;
                 //     })
                 // }
-                
+
 
                 // get users
                 if (url.endsWith('/users') && opts.method === 'GET') {
                     // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
                     if (opts.headers && opts.headers.Authorization === 'Bearer fake-jwt-token') {
-                        resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(users))});
+                        resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(users)) });
                     } else {
                         // return 401 not authorised if token is null or invalid
                         reject('Unauthorised');
@@ -71,7 +71,7 @@ export function configureFakeBackend() {
                         let user = matchedUsers.length ? matchedUsers[0] : null;
 
                         // respond 200 OK with user
-                        resolve({ ok: true, text: () => JSON.stringify(user)});
+                        resolve({ ok: true, text: () => JSON.stringify(user) });
                     } else {
                         // return 401 not authorised if token is null or invalid
                         reject('Unauthorised');
@@ -110,7 +110,7 @@ export function configureFakeBackend() {
                         // find user by id in users array
                         let urlParts = url.split('/');
                         let id = parseInt(urlParts[urlParts.length - 1]);
-                        for (let i = 0; i < users.length; i++) {
+                        for (let i = 0;i < users.length;i++) {
                             let user = users[i];
                             if (user.id === id) {
                                 // delete user

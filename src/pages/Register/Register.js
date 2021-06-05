@@ -45,11 +45,11 @@ class Register extends React.Component {
 
         const { alert } = this.props;
         return (
-            <div style={{paddingTop:'2rem'}}>
+            <div style={{ paddingTop: '2rem' }}>
                 <div className="text-center">
                     {alert.message &&
                         <div className={`alert ${alert.type}`}>{alert.message}</div>
-                    }  
+                    }
                 </div>
                 <div className="container">
                     <div className="row">
@@ -69,7 +69,7 @@ class Register extends React.Component {
                                     <label htmlFor="lastName">Tên</label>
                                     <input type="text" className="form-control" name="lastName" value={user.lastName} onChange={this.handleChange} />
                                     {submitted && !user.lastName &&
-                                        <div className="help-block text-danger">Yêu cầu nhập họ</div>
+                                        <div className="help-block text-danger">Yêu cầu nhập tên</div>
                                     }
                                 </div>
                                 <div className={'form-group' + (submitted && !user.username ? ' has-error' : '')}>

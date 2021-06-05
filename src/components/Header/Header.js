@@ -83,7 +83,7 @@ class Header extends React.Component {
                             <div className="col-lg-3 text-right col-md-3 col-sm-2">
                                 <ul className="nav-right">
                                     <li className="heart-icon">
-                                        <NavLink className="nav-link" to={"/withlist"}><i className="fa fa-heart"
+                                        <NavLink className="nav-link" to={"/wishlist"}><i className="fa fa-heart"
                                             aria-hidden="true" /><span class>1</span> {cartLength ? `(${cartLength})` : ''}</NavLink>
                                         {/* <a href="/withlist">
                                             <i className="fa fa-heart"></i>

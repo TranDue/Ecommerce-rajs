@@ -43,7 +43,7 @@ const ProductDetail = (props) => {
                 <button
                     onClick={onCart}
                     className="btn btn-danger  text-uppercase"><i
-                        className="fa fa-heart" /> Add to withlist
+                        className="fa fa-heart" /> Add to wishlist
                 </button>
             </article>
         </aside>

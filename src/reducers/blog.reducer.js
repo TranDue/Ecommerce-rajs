@@ -1,9 +1,9 @@
 
-import {blogs} from "../data/blogs";
+import { blogs } from "../data/blogs";
 const initialState = {
     blog: blogs
 };
-const blogReducer = (state = initialState) =>{
+const blogReducer = (state = initialState) => {
     return state;
 }
 export default blogReducer;

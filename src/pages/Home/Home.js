@@ -5,11 +5,11 @@ const Home = () => {
     return (
         <React.Fragment>
             <did>
-                <SlideEffect></SlideEffect> 
+                <SlideEffect></SlideEffect>
             </did>
             <div className="container">
-                <div className="row">                          
-                    <ProductListHome/>
+                <div className="row">
+                    <ProductListHome />
                 </div>
             </div>
         </React.Fragment>

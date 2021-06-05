@@ -18,17 +18,17 @@ export const removeProductToCart = productId => {
 };
 
 export const incrementCartQuantity = productId => {
-    return{
+    return {
         type: INCREMENT_CART_ITEM_QUANTITY,
         payload: productId
     }
 };
 
 export const decrementCartQuantity = productId => {
-  return {
-      type: DECREMENT_CART_ITEM_QUANTITY,
-      payload: productId
-  }
+    return {
+        type: DECREMENT_CART_ITEM_QUANTITY,
+        payload: productId
+    }
 };
 
 export const ADD_BOOK_TO_FILTER = 'ADD_BOOK_TO_FILTER';
@@ -44,7 +44,7 @@ export const addBrandToFilter = category => {
 
 
 export const removeBrandFromFilter = category => {
-    return  {
+    return {
         type: REMOVE_BOOK_FROM_FILTER,
         category
     }
@@ -60,7 +60,7 @@ export const orderByAsc = () => {
     }
 };
 
-export const orderByDesc =  () => {
+export const orderByDesc = () => {
     return {
         type: ORDER_BY_DESC
     }
