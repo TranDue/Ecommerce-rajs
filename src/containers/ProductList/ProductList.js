@@ -12,7 +12,7 @@ class ProductList extends Component {
     state = {
         perPage: 12,
         currentPage: 1,
-        pagesToShow: 3,
+        pagesToShow: 4,
     };
     onPrev = () => {
         const updatedState = { ...this.state };

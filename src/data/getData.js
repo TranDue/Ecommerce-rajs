@@ -39,7 +39,7 @@ var phones = Object.keys(imagesMap).reduce((acc, key, i) => {
         var newPhone = {
             price: getRandomArbitrary(1500, 10000),
             Author: "Herbert Schildt",
-            date: "6/20/2020",
+            date: "6/02/2021",
             ISBN: "978-1260440232"
         };
         newPhone.title = key;

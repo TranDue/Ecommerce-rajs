@@ -28,7 +28,7 @@ const CartItem = (
         const value = e.target.value;
         console.log(value)
 
-        if (value > 0 && value <= 10) {
+        if (value > 0 && value <= 20) {
             setItemQuantity(value);
             dispatch(addProductToCart(id));
         }
@@ -38,7 +38,7 @@ const CartItem = (
         const value = itemQuantity;
         console.log(type, value);
 
-        if (type === 'inc' && value < 10) {
+        if (type === 'inc' && value < 20) {
             setItemQuantity(itemQuantity + 1);
             dispatch(incrementCartQuantity(id));
         }
