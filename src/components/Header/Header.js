@@ -13,6 +13,9 @@ class Header extends React.Component {
         this.props.getUsers();
     }
     getlegth() {
+        return this.props.wistlistLength;
+    }
+    getlegth() {
         return this.props.cartLength;
     }
     getTotal() {
@@ -23,6 +26,7 @@ class Header extends React.Component {
     }
     render() {
         const { user, users } = this.props;
+        const wistlistLength = this.getlegth();
         const cartLength = this.getlegth();
         const totalPrice = this.getTotal();
         const userLocalStorage = this.getUserLocalStorage();
@@ -84,11 +88,7 @@ class Header extends React.Component {
                                 <ul className="nav-right">
                                     <li className="heart-icon">
                                         <NavLink className="nav-link" to={"/wishlist"}><i className="fa fa-heart"
-                                            aria-hidden="true" /><span class>1</span> {cartLength ? `(${cartLength})` : ''}</NavLink>
-                                        {/* <a href="/withlist">
-                                            <i className="fa fa-heart"></i>
-                                            <span>1</span>
-                                        </a> */}
+                                            aria-hidden="true" /><span class>Yêu thích</span></NavLink>
                                     </li>
                                     <li className="cart-icon">
                                         <li>
@@ -146,6 +146,16 @@ const mapStateToProps = (state) => {
     const { user } = authentication;
 
     return {
+        wistListItems: state.shop.wistlist,
+        wistlistItemCount: state.shop.wistlist.reduce((count, curItem) => {
+            return count + curItem.quantity;
+        }, 0),
+        totalPrice: state.shop.wistlist.reduce((count, curItem) => {
+            return count + (curItem.price * curItem.quantity);
+        }, 0),
+
+        wistlistLength: state.shop.wistlist.length,
+
         cartItems: state.shop.cart,
         cartItemCount: state.shop.cart.reduce((count, curItem) => {
             return count + curItem.quantity;
@@ -153,7 +163,11 @@ const mapStateToProps = (state) => {
         totalPrice: state.shop.cart.reduce((count, curItem) => {
             return count + (curItem.price * curItem.quantity);
         }, 0),
+
         cartLength: state.shop.cart.length,
+
+
+
         user,
         users
     }

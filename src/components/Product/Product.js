@@ -6,7 +6,7 @@ import { cumulativeOffSet } from "../../utilities/cumulativeOffset";
 
 import './Product.scss';
 import SlideDots from "../SlideDots/SlideDots";
-import { addProductToCart } from "../../actions";
+import { addProductToCart, addProductToWistList } from "../../actions";
 
 
 const Product = (props) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { formatMoney } from "../../pipes/priceFormatter";
-import { addProductToCart } from "../../actions";
+import { addProductToCart, addProductToWistList } from "../../actions";
 import './ProductDetail.scss';
 require('typeface-encode-sans-condensed')
 const ProductDetail = (props) => {
@@ -11,10 +11,12 @@ const ProductDetail = (props) => {
         price,
         Author,
     } = props.product;
+    const onWistList = () => {
+        props.dispatch(addProductToWistList(props.product));
+    };
     const onCart = () => {
         props.dispatch(addProductToCart(props.product));
     };
-
     return (
         <aside className="col-sm-5 col-xs-0">
             <article className="">
@@ -41,7 +43,7 @@ const ProductDetail = (props) => {
                 </button>
                 <br />
                 <button
-                    onClick={onCart}
+                    onClick={onWistList}
                     className="btn btn-danger  text-uppercase"><i
                         className="fa fa-heart" /> Add to wishlist
                 </button>

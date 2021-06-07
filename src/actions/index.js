@@ -3,6 +3,25 @@ export const REMOVE_PRODUCT_FROM_CART = 'REMOVE_PRODUCT_FROM_CART';
 export const INCREMENT_CART_ITEM_QUANTITY = 'INCREMENT_CART_ITEM_QUANTITY';
 export const DECREMENT_CART_ITEM_QUANTITY = 'DECREMENT_CART_ITEM_QUANTITY';
 
+export const ADD_ORDER_TO_MANAGEMENT = 'ADD_ORDER_TO_MANAGEMENT';
+
+export const ADD_PRODUCT_TO_WISTLIST = 'ADD_PRODUCT_TO_WISTLIST';
+export const REMOVE_PRODUCT_FROM_WISTLIST = 'REMOVE_PRODUCT_FROM_WISTLIST';
+
+export const addProductToWistList = product => {
+    return {
+        type: ADD_PRODUCT_TO_WISTLIST,
+        payload: product
+    }
+};
+
+export const removeProductToWistList = productId => {
+    return {
+        type: REMOVE_PRODUCT_FROM_WISTLIST,
+        payload: productId
+    }
+};
+
 export const addProductToCart = product => {
     return {
         type: ADD_PRODUCT_TO_CART,

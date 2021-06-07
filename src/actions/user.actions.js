@@ -79,12 +79,12 @@ function getAll() {
 }
 //my
 function getID() {
-    return dispath => {
-        dispath(request())
+    return dispatch => {
+        dispatch(request())
         userService.getById()
             .then(
-                users => dispath(success(users)),
-                error => dispath(failure(error.toString()))
+                users => dispatch(success(users)),
+                error => dispatch(failure(error.toString()))
             );
     }
     function request() { return { type: userConstants.GETID_REQUEST } }

@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import { shortenTitle } from "../../pipes/shortenTitle";
-import { formatMoney } from "../../pipes/priceFormatter";
-import "./CartItem.scss";
+import React, { useState } from "react"
+import { connect } from "react-redux"
+import { shortenTitle } from "../../pipes/shortenTitle"
+import { formatMoney } from "../../pipes/priceFormatter"
+import "./CartItem.scss"
 import {
   addProductToCart,
-  decrementCartQuantity,
-  incrementCartQuantity,
   removeProductToCart,
-} from "../../actions";
+  decrementCartQuantity,
+  incrementCartQuantity
+} from "../../actions"
 
 const CartItem = ({
   title,
@@ -19,37 +19,37 @@ const CartItem = ({
   img,
   dispatch,
 }) => {
-  console.log(id);
-  const [itemQuantity, setItemQuantity] = useState(quantity);
+  console.log(id)
+  const [itemQuantity, setItemQuantity] = useState(quantity)
 
   const removeItem = () => {
-    dispatch(removeProductToCart(id));
-  };
+    dispatch(removeProductToCart(id))
+  }
 
   const handleQuantityChange = (e) => {
-    const value = e.target.value;
-    console.log(value);
+    const value = e.target.value
+    console.log(value)
 
     if (value > 0 && value <= 20) {
-      setItemQuantity(value);
-      dispatch(addProductToCart(id));
+      setItemQuantity(value)
+      dispatch(addProductToCart(id))
     }
-  };
+  }
 
   const incrementOrDecrement = (e, type) => {
-    const value = itemQuantity;
-    console.log(type, value);
+    const value = itemQuantity
+    console.log(type, value)
 
     if (type === "inc" && value < 20) {
-      setItemQuantity(itemQuantity + 1);
-      dispatch(incrementCartQuantity(id));
+      setItemQuantity(itemQuantity + 1)
+      dispatch(incrementCartQuantity(id))
     }
 
     if (type === "desc" && value > 1) {
-      setItemQuantity(itemQuantity - 1);
-      dispatch(decrementCartQuantity(id));
+      setItemQuantity(itemQuantity - 1)
+      dispatch(decrementCartQuantity(id))
     }
-  };
+  }
 
   return (
     <div className="row align-items-center mb-3">
@@ -84,7 +84,7 @@ const CartItem = ({
           <div className="quantity">
             <input
               onClick={(e) => {
-                incrementOrDecrement(e, "inc");
+                incrementOrDecrement(e, "inc")
               }}
               type="button"
               value="+"
@@ -103,7 +103,7 @@ const CartItem = ({
             />
             <input
               onClick={(e) => {
-                incrementOrDecrement(e, "desc");
+                incrementOrDecrement(e, "desc")
               }}
               type="button"
               value="-"
@@ -122,7 +122,7 @@ const CartItem = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default connect()(CartItem);
+export default connect()(CartItem)
