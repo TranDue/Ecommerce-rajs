@@ -13,6 +13,7 @@
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.8.3",
     "react-medium-image-zoom": "^3.0.15",
+    "react-modal": "^3.14.2",
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^4.0.3",

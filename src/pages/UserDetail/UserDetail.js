@@ -3,7 +3,16 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userActions } from '../../actions/user.actions';
 import './UserDetail.scss';
+import Modal from "react-modal"
+import EditUser from "./EditUser/EditUser"
 class UserDetail extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            modalIsOpen: false,
+            news: []
+        }
+    }
     componentDidMount() {
         this.props.getUser();
     }
@@ -11,7 +20,17 @@ class UserDetail extends React.Component {
     // handleDeleteUser(id) {
     //     return (e) => this.props.deleteUser(id);
     // }
+    openModal = () => {
+        this.setState({
+            modalIsOpen: true
+        })
+    }
 
+    closeModal = () => {
+        this.setState({
+            modalIsOpen: false
+        })
+    }
     render() {
         const { user, users } = this.props;
         return (
@@ -19,7 +38,17 @@ class UserDetail extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 col-sm-12 ">
-                            <h3>Chi tiết tài khoản!</h3>
+                            <h3>Chi tiết tài khoản: </h3>
+                            <div onClick={() => this.openModal()} className="SettingConfig">
+                                <button type="button" class="btn btn-outline-info">Edit user</button>
+                                <Modal
+                                    isOpen={this.state.modalIsOpen}
+                                    onRequestClose={this.closeModal}
+                                >
+                                    <EditUser className="modalConfig" />
+                                </Modal>
+                            </div>
+                            <br />
                             <ul>
                                 <li>User name: {user.firstName} {user.lastName}</li>
                                 <li>Id: {user.id}</li>
@@ -63,7 +92,7 @@ class UserDetail extends React.Component {
                                 <Link className="btn btn-danger" to="/wishlist"><i className="fa fa-heart"></i>Danh sách yêu thích</Link>
                             </span>
                             <span>
-                                <Link className="btn btn-primary" to="/login">Logout</Link>
+                                <Link className="btn btn-outline-secondary" to="/login">Logout</Link>
                             </span>
                         </div>
                     </div>
