@@ -10,7 +10,7 @@ export default function OrderManagement(props) {
         <div className="card shopping-cart">
           <div className="card-header bg-blue text-light">
             <i className="fa fa-shopping-cart pr-2" aria-hidden="true"></i>
-            Order Management
+            Quản lý đơn hàng
             <div className="clearfix"></div>
           </div>
 

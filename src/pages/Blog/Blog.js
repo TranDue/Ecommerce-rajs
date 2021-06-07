@@ -44,7 +44,7 @@ class Blog extends Component {
                                             </div>
                                             <div className="rb-text">
                                                 <h6>Các khái niệm java...</h6>
-                                                <p>Java<span>TranDue</span> <span>- 13/6, 2019</span></p>
+                                                <p>Java<span>TranDue</span> <span>- 06 / 13 / 2021</span></p>
                                             </div>
                                         </a>
                                         <a href="#" className="rb-item">
@@ -53,7 +53,7 @@ class Blog extends Component {
                                             </div>
                                             <div className="rb-text">
                                                 <h6>Các khái niệm java...</h6>
-                                                <p>Java<span>TranDue</span> <span>- 13/6, 2019</span></p>
+                                                <p>Java<span>TranDue</span> <span>- 06 / 13 / 2021</span></p>
                                             </div>
                                         </a>
                                         <a href="#" className="rb-item">
@@ -62,7 +62,7 @@ class Blog extends Component {
                                             </div>
                                             <div className="rb-text">
                                                 <h6>Các khái niệm java...</h6>
-                                                <p>Java<span>TranDue</span> <span>- 13/6, 2019</span></p>
+                                                <p>Java<span>TranDue</span> <span>- 06 / 13 / 2021</span></p>
                                             </div>
                                         </a>
 

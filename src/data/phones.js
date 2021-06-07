@@ -96,7 +96,7 @@ export const phones = [{
 }, {
     "title": "Fullstacj React ",
     "category": "react.js",
-    "images": ["https://cdn.fado.vn/images/I/71Yd2ACrDcL.jpg"],
+    "images": ["https://static.packt-cdn.com/products/9781788835534/cover/smaller"],
     "price": 400,
     "Author": "Herbert Schildt",
     "date": "06/02/2021",

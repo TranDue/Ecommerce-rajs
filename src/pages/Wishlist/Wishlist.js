@@ -10,7 +10,7 @@ export default function Wishlist(props) {
         <div className="card shopping-cart">
           <div className="card-header bg-pink text-light">
             <i className="fa fa-shopping-cart pr-2" aria-hidden="true"></i>
-            My wishlist
+            Danh sách yêu thích
             <div className="clearfix"></div>
           </div>
 
