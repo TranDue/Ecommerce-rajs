@@ -15,9 +15,14 @@ export default function OrderManagement(props) {
           </div>
 
           <div className="card-body">
-            {props.cartItemCount ? (
+            <BillItem
+            />
+
+            {/* {props.cartItemCount ? (
               props.cartItems.map((cart) => (
-                <BillItem {...cart} img={cart.images[0]} />
+                <BillItem 
+                {...cart} img={cart.images[0]} 
+                />
               ))
             ) : (
               <div className="continue row">
@@ -25,7 +30,7 @@ export default function OrderManagement(props) {
                   <h1 className="text-center">Bạn chưa có đơn hàng ... </h1>
                 </div>
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </div>

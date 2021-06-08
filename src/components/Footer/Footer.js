@@ -4,26 +4,26 @@ import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
     return (
-        <footer class="footer-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="footer-left">
+        <footer className="footer-section">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-3">
+                        <div className="footer-left">
                             <h5>Địa chỉ</h5>
                             <ul>
                                 <li>Địa chỉ: TP Thủ Đức</li>
                                 <li>Phone: 0336686397</li>
                                 <li>Email: trandue@gmail.com</li>
                             </ul>
-                            <div class="footer-social">
-                                <a href="/"><i class="fa fa-linkedin"></i></a>
-                                <a href="https://github.com/TranDue"><i class="fa fa-github"></i></a>
+                            <div className="footer-social">
+                                <a href="/"><i className="fa fa-linkedin"></i></a>
+                                <a href="https://github.com/TranDue"><i className="fa fa-github"></i></a>
 
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-2 offset-lg-1">
-                        <div class="footer-widget">
+                    <div className="col-lg-2 offset-lg-1">
+                        <div className="footer-widget">
                             <h5>Thông tin</h5>
                             <ul>
                                 <li><a href="/">Chăm sóc khách hàng</a></li>
@@ -32,8 +32,8 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-2">
-                        <div class="footer-widget">
+                    <div className="col-lg-2">
+                        <div className="footer-widget">
                             <h5>Tài khoản của tôi</h5>
                             <ul>
                                 <li><NavLink to="/login">Tài Khoản</NavLink></li>
@@ -43,11 +43,11 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="newslatter-item">
+                    <div className="col-lg-4">
+                        <div className="newslatter-item">
                             <h5>Đăng ký nhận bản tin của chúng tôi</h5>
                             <p>Đừng bỏ lỡ những bản tin hấp dẫn</p>
-                            <form action="#" class="subscribe-form">
+                            <form action="#" className="subscribe-form">
                                 <input type="text" placeholder="Địa chỉ email của bạn" />
                                 <button type="button">Đăng ký</button>
                             </form>

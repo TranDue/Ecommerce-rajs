@@ -1,8 +1,11 @@
 import React from 'react';
 import { Formik, Field } from "formik";
-import { NavLink } from "react-router-dom";
+import {
+    addBillToOrderManagement
+} from '../../actions'
 import * as Yup from "yup";
 import './OrderAdress.scss'
+
 const options = [
     {
         label: "Option 1",
@@ -22,7 +25,6 @@ const options = [
     }
 ];
 const OrderAdress = () => {
-
     return (
         <div>
             <div>
@@ -31,10 +33,10 @@ const OrderAdress = () => {
             <div className="order">
                 <h2 className="text-center m-3">Đơn đặt hàng</h2>
                 <Formik
-                    initialValues={{ name: "", sdt: "", email: "", address: "", cart: "" }}
+                    initialValues={{ name: "", sdt: "", address: "" }}
                     onSubmit={(values, { setSubmitting }) => {
                         setTimeout(() => {
-                            console.log("Logging in", values);
+                            console.log("History order", values);
                             setSubmitting(false);
                         }, 500);
                     }}

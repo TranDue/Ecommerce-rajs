@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import { userActions } from '../../actions/user.actions';
 import { alertActions } from '../../actions/alert.actions';
+import swal from 'sweetalert';
+
 import './Login.scss';
 class Login extends React.Component {
   constructor(props) {
@@ -31,6 +33,8 @@ class Login extends React.Component {
     const { username, password } = this.state;
     if (username && password) {
       this.props.login(username, password);
+      swal("Đăng nhập thành công!", "Chúc bạn ngày mới tràn đầy năng lượng!", "success")
+
     }
   }
 

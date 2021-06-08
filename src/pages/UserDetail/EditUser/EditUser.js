@@ -8,9 +8,11 @@ export default class EditUser extends Component {
         super(props);
         this.onChangefirstName = this.onChangefirstName.bind(this)
         this.onChangelastName = this.onChangelastName.bind(this)
+        this.onChanguserName = this.onChanguserName.bind(this)
         this.state = {
             firstName: "",
             lastName: "",
+            userName: ""
         }
     }
 
@@ -21,14 +23,15 @@ export default class EditUser extends Component {
     onChangelastName(e) {
         this.setState({ lastName: e.target.value })
     }
-    onChangeusername(e) {
-        this.setState({ username: e.target.value })
+    onChanguserName(e) {
+        this.setState({ userName: e.target.value })
     }
     onSubmit(e) {
         e.preventDefault()
         this.setState({
             firstName: "",
             lastName: "",
+            username: ""
         })
     }
 
@@ -38,11 +41,13 @@ export default class EditUser extends Component {
             this.setState({
                 firstName: this.userData.firstName,
                 lastName: this.userData.lastName,
+                username: this.userData.username
             })
         } else {
             this.setState({
                 firstName: "",
                 lastName: "",
+                username: ""
             })
         }
     }
@@ -58,7 +63,7 @@ export default class EditUser extends Component {
         event.preventDefault();
         this.setState({ submitted: true });
         const { user } = this.state;
-        if (user.firstName && user.lastName && user.username && user.password) {
+        if (user.firstname && user.lastname) {
             this.props.register(user);
         }
     }
@@ -75,7 +80,7 @@ export default class EditUser extends Component {
                         width: 50,
                         height: 50,
                         borderRadius: 50
-                    }} src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar" />
+                    }} src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" className="avatar" />
                     <div className="form-group">
                         <div>
                             <label>First Name</label>
@@ -83,7 +88,7 @@ export default class EditUser extends Component {
                         <input
                             type="text"
                             className="form-control"
-                            value={this.state.firstName}
+                            value={this.state.firstname}
                             onChange={this.onChangefirstName}
                         />
                     </div>
@@ -94,12 +99,24 @@ export default class EditUser extends Component {
                         <input
                             type="text"
                             className="form-control"
-                            value={this.state.lastName}
+                            value={this.state.lastname}
                             onChange={this.onChangelastName}
                         />
                     </div>
+                    <div className="form-group">
+                        <div>
+                            <label>Email</label>
+                        </div>
+                        <input
+                            type="email"
+                            className="form-control"
+                            value={this.state.username}
+                            onChange={this.onChanguserName}
+                        />
+                    </div>
 
-                    <button type="submit" class="btn btn-outline-success">
+
+                    <button type="submit" className="btn btn-outline-success">
                         Submit 🤔
                     </button>
                 </form>

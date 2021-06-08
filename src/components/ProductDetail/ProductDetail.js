@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { formatMoney } from "../../pipes/priceFormatter";
 import { addProductToCart, addProductToWistList } from "../../actions";
+import swal from 'sweetalert';
 import './ProductDetail.scss';
 require('typeface-encode-sans-condensed')
+
+
 const ProductDetail = (props) => {
     const {
         title,
@@ -13,9 +16,12 @@ const ProductDetail = (props) => {
     } = props.product;
     const onWistList = () => {
         props.dispatch(addProductToWistList(props.product));
+        swal("Đã thêm vào danh sách yêu thích!", "You clicked the button!", "success")
     };
     const onCart = () => {
         props.dispatch(addProductToCart(props.product));
+        swal("Đã thêm vào giỏ hàng!", "You clicked the button!", "success")
+
     };
     return (
         <aside className="col-sm-5 col-xs-0">
@@ -41,14 +47,16 @@ const ProductDetail = (props) => {
                         className="fa fa-shopping-cart" /> Add to cart
                 </button>
                 <br />
-                <br />
                 <button
+                    type="submit"
                     onClick={onWistList}
-                    className="btn btn-danger  text-uppercase"><i
-                        className="fa fa-heart" /> Add to wishlist
+                    className="btn btn-danger  text-uppercase">
+                    <i className="fa fa-heart"
+                    />
+                        Add to wishlist
                 </button>
             </article>
-        </aside>
+        </aside >
     );
 };
 

@@ -58,9 +58,9 @@ class Header extends React.Component {
                             }
 
                             <div className="top-social">
-                                <a href="/"><i class="fa fa-linkedin"></i></a>
-                                <a href="https://github.com/TranDue"><i class="fa fa-github"></i></a>
-                                <a href="/"><i class="fa fa-dev"></i></a>
+                                <a href="/"><i className="fa fa-linkedin"></i></a>
+                                <a href="https://github.com/TranDue"><i className="fa fa-github"></i></a>
+                                <a href="/"><i className="fa fa-dev"></i></a>
                             </div>
                         </div>
                     </div>

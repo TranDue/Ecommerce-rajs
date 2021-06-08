@@ -96,7 +96,7 @@ const ExpansionPn = (props) => {
                 <i className="fa fa-credit-card"></i>  &nbsp;
                 <img style={{
                   marginTop: -10
-                }} class="method" src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/checkout/icon-payment-method-mo-mo.svg" alt="momo" />
+                }} className="method" src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/checkout/icon-payment-method-mo-mo.svg" alt="momo" />
               </div>
 
             </Typography>

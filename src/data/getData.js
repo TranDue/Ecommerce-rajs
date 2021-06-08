@@ -54,4 +54,22 @@ var phones = Object.keys(imagesMap).reduce((acc, key, i) => {
     return acc;
 }, []);
 
+var bills = Object.keys(imagesMap).reduce((acc, key, i) => {
+
+    if (imagesMap[key].length !== 0) {
+        var newBill = {
+            price: getRandomArbitrary(1500, 10000),
+            Author: "Herbert Schildt",
+            date: new Date(),
+        };
+        newBill.title = key;
+        newBill.brand = key.split(' ')[0].toLowerCase();
+        newBill.category = 'java';
+        newBill.images = imagesMap[key];
+
+        acc.push(newBill);
+    }
+
+    return acc;
+}, []);
 console.log(JSON.stringify(phones));

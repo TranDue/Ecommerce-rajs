@@ -4,21 +4,28 @@ import {
     ADD_PRODUCT_TO_CART,
     DECREMENT_CART_ITEM_QUANTITY,
     INCREMENT_CART_ITEM_QUANTITY,
-    REMOVE_PRODUCT_FROM_CART
+    REMOVE_PRODUCT_FROM_CART,
+    ADD_BILL_TO_ORDERMANAGEMENT
 } from '../actions';
+import { bill } from '../data/bill';
 import { phones } from "../data/phones";
 
 const initialState = {
     products: phones,
+    bills: bill,
     cart: [],
-    wistlist: []
+    wistlist: [],
+    orderbill: []
 };
 const shopReducer = (state = initialState, action) => {
-    let updatedCart;
-    let updatedWistList;
-    let updatedItemIndex;
-    let updatedItemIndex1;
+    let updatedCart
+    let updatedItemIndex
 
+    let updatedWistList
+    let updatedItemIndex1
+
+    let updateOrderBill
+    let updateItemBill
 
     switch (action.type) {
         case INCREMENT_CART_ITEM_QUANTITY:
@@ -107,6 +114,23 @@ const shopReducer = (state = initialState, action) => {
             updatedWistList.splice(updatedItemIndex1, 1);
 
             return { ...state, wistlist: updatedWistList };
+
+        case ADD_BILL_TO_ORDERMANAGEMENT:
+            updateOrderBill = [...state.orderbill];
+            updateItemBill = updateOrderBill.findIndex(item => item.id === action.payload.id);
+
+            if (updateItemBill < 0) {
+                updateOrderBill.push({ ...action.payload, quantity: 1 });
+            } else {
+                const updatedItem2 = {
+                    ...updateOrderBill[updateItemBill]
+                };
+
+                updatedItem2.quantity++;
+                updateOrderBill[updateItemBill] = updatedItem2;
+            }
+            return { ...state, orderbill: updateOrderBill };
+
         default:
             return state;
 

@@ -6,7 +6,6 @@ import "./OrderItem.scss"
 import {
     addProductToWistList,
     removeProductToWistList,
-    addProductToCart
 } from "../../actions"
 
 const OrderItem = ({
@@ -17,9 +16,26 @@ const OrderItem = ({
     img,
     dispatch
 }) => {
+
     console.log("wistlist", id)
     const removeItem = () => {
-        dispatch(removeProductToWistList(id))
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    dispatch(removeProductToWistList(id))
+                    swal("Poof! Your imaginary file has been deleted!", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
+            });
     }
 
     const handleQuantityChange = (e) => {
@@ -32,7 +48,8 @@ const OrderItem = ({
         }
     }
     const onCart = () => {
-        props.dispatch(addProductToCart(props.product));
+        swal("Chúng tôi sẽ sớm quay lại");
+        // props.dispatch(addProductToCart(props.product));
     };
     return (
         <div className="row align-items-center mb-3">
@@ -72,6 +89,7 @@ const OrderItem = ({
                         className="btn btn-warning  text-uppercase">
                         <i className="fa fa-shopping-cart" />
                     </button>
+                    <br />
                     <br />
                     <button
                         onClick={removeItem}

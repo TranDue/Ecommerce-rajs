@@ -99,7 +99,7 @@ const RateTab = (props) => {
                                 </ul>
                             </div>
                         </div>
-                        <div class="form-style-6">
+                        <div className="form-style-6">
                             <form>
                                 <input type="text" name="field1" placeholder="Your Name" />
                                 <input type="email" name="field2" placeholder="Email Address" />
