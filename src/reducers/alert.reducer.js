@@ -1,6 +1,7 @@
 import { alertConstants } from '../_constants/alert.constants';
 
 export function alert(state = {}, action) {
+  // alert login user
   switch (action.type) {
     case alertConstants.SUCCESS:
       return {

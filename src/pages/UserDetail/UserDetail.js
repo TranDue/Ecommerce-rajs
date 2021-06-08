@@ -39,7 +39,7 @@ class UserDetail extends React.Component {
                     <div className="row">
                         <div className="col-md-12 col-sm-12 ">
                             <h3>Chi tiết tài khoản: </h3>
-                            <div onClick={() => this.openModal()} className="SettingConfig">
+                            <div onClick={() => this.openModal()}>
                                 <button type="button" className="btn btn-outline-info">Edit user</button>
                                 <Modal
                                     isOpen={this.state.modalIsOpen}
@@ -49,10 +49,10 @@ class UserDetail extends React.Component {
                                 </Modal>
                             </div>
                             <br />
-                            <ul>
-                                <li>User name: {user.firstName} {user.lastName}</li>
-                                <li>Email: {user.username}</li>
-                            </ul>
+                            <dd>
+                                <dt>User name: {user.firstName} {user.lastName}</dt>
+                                <dt>Email: {user.username}</dt>
+                            </dd>
                             {/* <h3>All registered users:</h3> */}
                             {/* {users.loading && <em>Loading users...</em>}
                         {users.error && <span className="text-danger">ERROR: {users.error}</span>} */}

@@ -100,6 +100,7 @@ export const GO_PAGE = 'GO_PAGE';
 export const COUNT_ITEM = 'COUNT_ITEM';
 
 
+// pagination
 export const nextPage = () => {
     return {
         type: NEXT_PAGE
@@ -126,9 +127,10 @@ export const countItem = (n) => {
     }
 };
 
-export const addBillToOrderManagement = product => {
+
+export const addBillToOrderManagement = bill => {
     return {
         type: ADD_BILL_TO_ORDERMANAGEMENT,
-        payload: product
+        payload: bill
     }
 }

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import {
     addBillToOrderManagement
 } from "../../actions"
-
+import { bill } from "../../data/bill"
 const BillItem = ({
     name,
     sdt,
@@ -15,7 +15,10 @@ const BillItem = ({
     img,
     dispatch
 }) => {
+    console.log("fake data", bill)
+    console.log("test data", bill.price)
     return (
+        // list bill in order management
         <div className="row align-items-center mb-3">
             <div className="col-12 col-sm-12 col-md-2 text-center">
                 <img

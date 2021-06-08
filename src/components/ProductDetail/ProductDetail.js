@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { formatMoney } from "../../pipes/priceFormatter";
 import { addProductToCart, addProductToWistList } from "../../actions";
@@ -46,6 +46,7 @@ const ProductDetail = (props) => {
                     className="btn btn-warning  text-uppercase"><i
                         className="fa fa-shopping-cart" /> Add to cart
                 </button>
+                <br />
                 <br />
                 <button
                     type="submit"

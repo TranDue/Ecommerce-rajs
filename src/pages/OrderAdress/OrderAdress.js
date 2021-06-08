@@ -1,45 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import { Formik, Field } from "formik";
+import { shortenTitle } from "../../pipes/shortenTitle"
+import { formatMoney } from "../../pipes/priceFormatter"
+import swal from 'sweetalert';
 import {
     addBillToOrderManagement
 } from '../../actions'
 import * as Yup from "yup";
 import './OrderAdress.scss'
 
-const options = [
-    {
-        label: "Option 1",
-        value: 1
-    },
-    {
-        label: "Option 2",
-        value: 2
-    },
-    {
-        label: "Option 3",
-        value: 3
-    },
-    {
-        label: "Option 4",
-        value: 4
-    }
-];
-const OrderAdress = () => {
+
+const OrderAdress = (props) => {
+
+    // const OrderBill = () => {
+    //     props.dispatch(addBillToOrderManagement(props.bill))
+    //     swal("Đã thêm vào danh sách yêu thích!", "You clicked the button!", "success")
+    // }
     return (
         <div>
-            <div>
-
-            </div>
             <div className="order">
                 <h2 className="text-center m-3">Đơn đặt hàng</h2>
                 <Formik
                     initialValues={{ name: "", sdt: "", address: "" }}
-                    onSubmit={(values, { setSubmitting }) => {
-                        setTimeout(() => {
-                            console.log("History order", values);
-                            setSubmitting(false);
-                        }, 500);
-                    }}
                     validationSchema={Yup.object().shape({
                         name: Yup.string()
                             .required("Vui lòng nhập họ tên"),
@@ -48,7 +31,17 @@ const OrderAdress = () => {
                         address: Yup.string()
                             .required("Vui lòng nhập địa chỉ.")
                     })}
+                    onSubmit={(values, { setSubmitting }) => {
+                        setTimeout(() => {
+                            // alert order success
+                            swal("Đặt hàng thành công!", "You clicked the button!", "success")
+
+                            console.log("History order", values);
+                            setSubmitting(false);
+                        }, 500);
+                    }}
                 >
+
                     {props => {
                         const {
                             values,
@@ -59,6 +52,7 @@ const OrderAdress = () => {
                             handleBlur,
                             handleSubmit
                         } = props;
+
                         return (
                             <form onSubmit={handleSubmit} className="formi">
 
@@ -93,42 +87,41 @@ const OrderAdress = () => {
                                 <label htmlFor="city">Tỉnh/Thành phố</label>
                                 <select
                                     name="city"
-                                    value={values.sex}
+                                    value={values.city}
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     style={{ display: 'block' }}
                                 >
-                                    <option value="" label="Hồ Chí Minh" />
-                                    <option value="red" label="Bình Định" />
-                                    <option value="blue" label="Đà Lạt" />
+                                    <option value="Hồ Chí Minh" label="Hồ Chí Minh" />
+                                    <option value="Bình Định" label="Bình Định" />
+                                    <option value="Đà Lạt" label="Đà Lạt" />
                                 </select>
 
                                 <label htmlFor="q">Quận huyện</label>
                                 <select
                                     name="q"
-                                    value={values.q}
+                                    value={values.quan}
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     style={{ display: 'block' }}
                                 >
-                                    <option value="" label="ĐL" />
-                                    <option value="red" label="TS" />
-                                    <option value="blue" label="QN" />
+                                    <option value="ĐL" label="ĐL" />
+                                    <option value="TS" label="TS" />
+                                    <option value="QN" label="QN" />
                                 </select>
 
                                 <label htmlFor="p">Phường/Xã</label>
                                 <select
                                     name="p"
-                                    value={values.p}
+                                    value={values.huyen}
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     style={{ display: 'block' }}
                                 >
                                     <option value="" label="Thị Trấn Vĩnh Thạnh" />
-                                    <option value="red" label="DL" />
-                                    <option value="blue" label="DL" />
+                                    <option value="DL" label="DL" />
+                                    <option value="Lâm Đồng" label="Lâm Đồng" />
                                 </select>
-
 
                                 <label htmlFor="address">Địa chỉ</label>
                                 <textarea
@@ -155,4 +148,4 @@ const OrderAdress = () => {
         </div>
     )
 }
-export default OrderAdress;
+export default connect()(OrderAdress);

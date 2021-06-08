@@ -13,17 +13,21 @@ import { phones } from "../data/phones";
 const initialState = {
     products: phones,
     bills: bill,
+
     cart: [],
     wistlist: [],
     orderbill: []
 };
 const shopReducer = (state = initialState, action) => {
+    // shopping cart
     let updatedCart
     let updatedItemIndex
 
+    // wistlist
     let updatedWistList
     let updatedItemIndex1
 
+    // order management
     let updateOrderBill
     let updateItemBill
 
@@ -63,6 +67,7 @@ const shopReducer = (state = initialState, action) => {
 
             return { ...state, cart: updatedCart };
 
+        // add item to cart
         case ADD_PRODUCT_TO_CART:
             updatedCart = [...state.cart];
             updatedItemIndex = updatedCart.findIndex(item => item.id === action.payload.id);
@@ -79,6 +84,8 @@ const shopReducer = (state = initialState, action) => {
             }
 
             return { ...state, cart: updatedCart };
+
+        // delete item from cart
         case REMOVE_PRODUCT_FROM_CART:
             updatedCart = [...state.cart];
             updatedItemIndex = updatedCart.findIndex(
@@ -89,6 +96,7 @@ const shopReducer = (state = initialState, action) => {
 
             return { ...state, cart: updatedCart };
 
+        // add item to wistlist
         case ADD_PRODUCT_TO_WISTLIST:
             updatedWistList = [...state.wistlist];
             updatedItemIndex1 = updatedWistList.findIndex(item => item.id === action.payload.id);
@@ -105,6 +113,7 @@ const shopReducer = (state = initialState, action) => {
             }
 
             return { ...state, wistlist: updatedWistList };
+        // delete item from wistlist
         case REMOVE_PRODUCT_FROM_WISTLIST:
             updatedWistList = [...state.wistlist];
             updatedItemIndex1 = updatedWistList.findIndex(
@@ -115,6 +124,7 @@ const shopReducer = (state = initialState, action) => {
 
             return { ...state, wistlist: updatedWistList };
 
+        // add bill to order management
         case ADD_BILL_TO_ORDERMANAGEMENT:
             updateOrderBill = [...state.orderbill];
             updateItemBill = updateOrderBill.findIndex(item => item.id === action.payload.id);

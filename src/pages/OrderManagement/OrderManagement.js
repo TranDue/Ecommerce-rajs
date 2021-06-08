@@ -3,7 +3,12 @@ import { NavLink } from "react-router-dom";
 import BillItem from "../../components/BillItem/BillItem";
 import "./OrderManagement.scss";
 
-export default function OrderManagement(props) {
+OrderManagement.propTypes = {}
+
+function OrderManagement(props) {
+  const handleSubmit = (values) => {
+    console.log("submit form: ", values)
+  }
   return (
     <>
       <div className="container" style={{ paddingTop: "2rem" }}>
@@ -16,6 +21,7 @@ export default function OrderManagement(props) {
 
           <div className="card-body">
             <BillItem
+              onSubmit={handleSubmit}
             />
 
             {/* {props.cartItemCount ? (
@@ -37,3 +43,4 @@ export default function OrderManagement(props) {
     </>
   );
 }
+export default OrderManagement
