@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from "react-redux";
 import { shortenTitle } from "../../pipes/shortenTitle";
 import { formatMoney } from "../../pipes/priceFormatter";
 import "./OrderItem.scss"
 import {
     addProductToWistList,
-    removeProductToWistList
+    removeProductToWistList,
+    addProductToCart
 } from "../../actions"
 
 const OrderItem = ({
@@ -20,6 +21,7 @@ const OrderItem = ({
     const removeItem = () => {
         dispatch(removeProductToWistList(id))
     }
+
     const handleQuantityChange = (e) => {
         const value = e.target.value
         console.log(value)
@@ -29,6 +31,9 @@ const OrderItem = ({
             dispatch(addProductToWistList(id))
         }
     }
+    const onCart = () => {
+        props.dispatch(addProductToCart(props.product));
+    };
     return (
         <div className="row align-items-center mb-3">
             <div className="col-12 col-sm-12 col-md-2 text-center">
@@ -59,6 +64,15 @@ const OrderItem = ({
                     </h6>
                 </div>
                 <div className="col-2 col-sm-2 col-md-2 text-right">
+                    <button
+                        style={{
+                            width: 100
+                        }}
+                        onClick={onCart}
+                        className="btn btn-warning  text-uppercase">
+                        <i className="fa fa-shopping-cart" />
+                    </button>
+                    <br />
                     <button
                         onClick={removeItem}
                         type="button"

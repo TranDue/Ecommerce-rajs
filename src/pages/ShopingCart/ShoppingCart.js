@@ -21,7 +21,7 @@ const ShoppingCart = (props) => {
                             <CartItem {...cart} img={cart.images[0]} />
                         )) : <div className="continue row">
                             <div className="col-xs-12 col-sm-12 col-md-9 offset-md-1 col-lg-8 offset-lg-2 right-side">
-                                <h1 className="text-center">Không có sản phẩm trong giỏ</h1>
+                                <h1 className="text-center">Bạn chưa thêm sản phẩm nào</h1>
                                 <button className="btn btn-warning "><NavLink className="nav-link" to="/shop">Tiếp tục đặt sách</NavLink></button>
                             </div>
                         </div>

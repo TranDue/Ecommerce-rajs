@@ -35,12 +35,12 @@ const ProductDetail = (props) => {
                     <dd className="text-capitalize">{brand}</dd>
                 </dl>
                 <hr />
-                <hr />
                 <button
                     onClick={onCart}
                     className="btn btn-warning  text-uppercase"><i
                         className="fa fa-shopping-cart" /> Add to cart
                 </button>
+                <br />
                 <br />
                 <button
                     onClick={onWistList}

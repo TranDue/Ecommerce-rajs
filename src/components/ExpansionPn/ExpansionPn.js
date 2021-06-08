@@ -92,9 +92,13 @@ const ExpansionPn = (props) => {
           >
             <Typography>
               <div className="credit">
-                <i className="fa fa-cc-visa"></i>
-                <i className="fa fa-credit-card "></i>
+                <i className="fa fa-cc-visa"></i>  &nbsp;
+                <i className="fa fa-credit-card"></i>  &nbsp;
+                <img style={{
+                  marginTop: -10
+                }} class="method" src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/checkout/icon-payment-method-mo-mo.svg" alt="momo" />
               </div>
+
             </Typography>
           </ExpansionPanelSummary>
         </ExpansionPanel>
@@ -103,10 +107,10 @@ const ExpansionPn = (props) => {
           >
             <Typography>
               <div className="rules">
-                <span>FAQ</span><span>Policy</span>
+                <span>FAQ</span>
+                <span>Policy</span>
               </div>
             </Typography>
-
           </ExpansionPanelSummary>
         </ExpansionPanel>
 

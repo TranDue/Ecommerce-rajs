@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import CartItem from "../../components/CartItem/CartItem";
+import BillItem from "../../components/BillItem/BillItem";
 import "./OrderManagement.scss";
 
 export default function OrderManagement(props) {
@@ -17,17 +17,12 @@ export default function OrderManagement(props) {
           <div className="card-body">
             {props.cartItemCount ? (
               props.cartItems.map((cart) => (
-                <CartItem {...cart} img={cart.images[0]} />
+                <BillItem {...cart} img={cart.images[0]} />
               ))
             ) : (
               <div className="continue row">
                 <div className="col-xs-12 col-sm-12 col-md-9 offset-md-1 col-lg-8 offset-lg-2 right-side">
-                  <h1 className="text-center">Không có đơn hàng</h1>
-                  <button className="btn btn-warning ">
-                    <NavLink className="nav-link" to="/shop">
-                      Thêm đơn hàng
-                    </NavLink>
-                  </button>
+                  <h1 className="text-center">Bạn chưa có đơn hàng ... </h1>
                 </div>
               </div>
             )}

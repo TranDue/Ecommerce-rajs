@@ -31,7 +31,7 @@ const OrderAdress = () => {
             <div className="order">
                 <h2 className="text-center m-3">Đơn đặt hàng</h2>
                 <Formik
-                    initialValues={{ name: "", sdt: "", email: "", password: "", address: "", checkboxGroup: [] }}
+                    initialValues={{ name: "", sdt: "", email: "", address: "", cart: "" }}
                     onSubmit={(values, { setSubmitting }) => {
                         setTimeout(() => {
                             console.log("Logging in", values);
@@ -144,7 +144,7 @@ const OrderAdress = () => {
 
                                 <button type="submit" disabled={isSubmitting}>
                                     Xác nhận
-                        </button>
+                                </button>
                             </form>
                         );
                     }}
