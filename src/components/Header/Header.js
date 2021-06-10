@@ -26,7 +26,6 @@ class Header extends React.Component {
     }
     render() {
         const { user, users } = this.props;
-        const wistlistLength = this.getlegth();
         const cartLength = this.getlegth();
         const totalPrice = this.getTotal();
         const userLocalStorage = this.getUserLocalStorage();
@@ -88,21 +87,16 @@ class Header extends React.Component {
                                 <ul className="nav-right">
                                     <li className="heart-icon">
                                         <NavLink className="nav-link" to={"/wishlist"}><i className="fa fa-heart"
-                                            aria-hidden="true" /><span class>Yêu thích</span></NavLink>
+                                            aria-hidden="true" /><span>Yêu thích</span></NavLink>
                                     </li>
                                     <li className="cart-icon">
-                                        <li>
-                                            <NavLink className="nav-link" to={"/cart"}><i className="fa fa-shopping-cart mr-2"
-                                                aria-hidden="true" /><span class>Giỏ hàng</span> {cartLength ? `(${cartLength})` : ''}</NavLink>
-                                        </li>
+                                        <NavLink className="nav-link" to={"/cart"}><i className="fa fa-shopping-cart mr-2"
+                                            aria-hidden="true" /><span>Giỏ hàng</span> {cartLength ? `(${cartLength})` : ''}</NavLink>
                                         <div className="cart-hover">
-
                                             <div className="card-footer">
-
                                                 <div>
                                                     Thành tiền: ${totalPrice}
                                                 </div>
-
                                             </div>
                                             <div className="select-button">
                                                 <NavLink className="primary-btn view-card nav-link" to="/cart">Xem giỏ hàng</NavLink>
@@ -127,7 +121,6 @@ class Header extends React.Component {
                                 <Nav className="mr-auto  mobile-menu">
                                     <li><NavLink to={"/"}>Trang chủ</NavLink></li>
                                     <li><NavLink to={"/shop"}>Tất cả sản phẩm</NavLink></li>
-                                    <li><NavLink to={"/orderadress"}>Thanh toán</NavLink></li>
                                     <li><NavLink to={"/blog"}>Blog</NavLink></li>
                                     <li><NavLink to={"/contact"}>Liên hệ</NavLink></li>
                                 </Nav>
@@ -146,6 +139,7 @@ const mapStateToProps = (state) => {
     const { user } = authentication;
 
     return {
+        // handle wistlist
         wistListItems: state.shop.wistlist,
         wistlistItemCount: state.shop.wistlist.reduce((count, curItem) => {
             return count + curItem.quantity;
@@ -156,6 +150,7 @@ const mapStateToProps = (state) => {
 
         wistlistLength: state.shop.wistlist.length,
 
+        // handle cart
         cartItems: state.shop.cart,
         cartItemCount: state.shop.cart.reduce((count, curItem) => {
             return count + curItem.quantity;
@@ -166,8 +161,7 @@ const mapStateToProps = (state) => {
 
         cartLength: state.shop.cart.length,
 
-
-
+        // get user
         user,
         users
     }

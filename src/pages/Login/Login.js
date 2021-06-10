@@ -33,8 +33,6 @@ class Login extends React.Component {
     const { username, password } = this.state;
     if (username && password) {
       this.props.login(username, password);
-      swal("Đăng nhập thành công!", "Chúc bạn ngày mới tràn đầy năng lượng!", "success")
-
     }
   }
 

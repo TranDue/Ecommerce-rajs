@@ -7,7 +7,7 @@ export const userService = {
     register,
     getAll,
     getById,
-    update,
+    // update,
     delete: _delete
 };
 
@@ -60,15 +60,15 @@ function register(user) {
     return fetch(`http://localhost:3000/register`, requestOptions).then(handleResponse);
 }
 
-function update(user) {
-    const requestOptions = {
-        method: 'PUT',
-        headers: { ...authHeader(), 'Content-Type': 'application/json' },
-        body: JSON.stringify(user)
-    };
+// function update(user) {
+//     const requestOptions = {
+//         method: 'PUT',
+//         headers: { ...authHeader(), 'Content-Type': 'application/json' },
+//         body: JSON.stringify(user)
+//     };
 
-    return fetch(`http://localhost:3000/users/${user.id}`, requestOptions).then(handleResponse);;
-}
+//     return fetch(`http://localhost:3000/users/${user.id}`, requestOptions).then(handleResponse);;
+// }
 
 // prefixed function name with underscore because delete is a reserved word in javascript
 function _delete(id) {

@@ -1,45 +1,61 @@
-import React, { useState, useEffect } from 'react';
-import { connect, useDispatch } from 'react-redux';
+import React from 'react';
 import { Formik, Field } from "formik";
-import { shortenTitle } from "../../pipes/shortenTitle"
-import { formatMoney } from "../../pipes/priceFormatter"
-import swal from 'sweetalert';
 import {
     addBillToOrderManagement
 } from '../../actions'
 import * as Yup from "yup";
 import './OrderAdress.scss'
+import { useDispatch, useSelector } from 'react-redux';
+import Swal from 'sweetalert2'
 
-
-const OrderAdress = (props) => {
-
-    // const OrderBill = () => {
-    //     props.dispatch(addBillToOrderManagement(props.bill))
-    //     swal("Đã thêm vào danh sách yêu thích!", "You clicked the button!", "success")
-    // }
+const OrderAdress = () => {
+    const dispatch = useDispatch()
+    const cartItem = useSelector(state => state.shop)
+    const _submit = (values) => {
+        dispatch(addBillToOrderManagement(values))
+    }
     return (
         <div>
             <div className="order">
                 <h2 className="text-center m-3">Đơn đặt hàng</h2>
                 <Formik
-                    initialValues={{ name: "", sdt: "", address: "" }}
+                    initialValues={{
+                        id: Math.floor(Math.random() * 9999999),
+                        name: "",
+                        sdt: "",
+                        address: "",
+                        d: new Date(),
+                        madh: Math.floor(Math.random(10000) * 9999999),
+                        title: cartItem.cart[0].title,
+                        price: cartItem.cart[0].price,
+                    }}
+                    onSubmit={(values, { setSubmitting }) => {
+                        setTimeout(() => {
+                            // alert order success
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Đặt hàng thành công',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+
+                            _submit(values)
+
+                            console.log("History order", values);
+
+                            setSubmitting(false);
+
+                        }, 1000);
+                    }}
                     validationSchema={Yup.object().shape({
                         name: Yup.string()
                             .required("Vui lòng nhập họ tên"),
                         sdt: Yup.string()
                             .required("Vui lòng nhập SĐT"),
                         address: Yup.string()
-                            .required("Vui lòng nhập địa chỉ.")
+                            .required("Vui lòng nhập địa chỉ."),
                     })}
-                    onSubmit={(values, { setSubmitting }) => {
-                        setTimeout(() => {
-                            // alert order success
-                            swal("Đặt hàng thành công!", "You clicked the button!", "success")
-
-                            console.log("History order", values);
-                            setSubmitting(false);
-                        }, 500);
-                    }}
                 >
 
                     {props => {
@@ -52,7 +68,6 @@ const OrderAdress = (props) => {
                             handleBlur,
                             handleSubmit
                         } = props;
-
                         return (
                             <form onSubmit={handleSubmit} className="formi">
 
@@ -139,13 +154,14 @@ const OrderAdress = (props) => {
 
                                 <button type="submit" disabled={isSubmitting}>
                                     Xác nhận
-                                </button>
+                                    </button>
                             </form>
                         );
                     }}
                 </Formik>
             </div>
-        </div>
+        </div >
     )
 }
-export default connect()(OrderAdress);
+
+export default OrderAdress;

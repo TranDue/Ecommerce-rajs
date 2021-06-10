@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { formatMoney } from "../../pipes/priceFormatter";
 import { addProductToCart, addProductToWistList } from "../../actions";
-import swal from 'sweetalert';
 import './ProductDetail.scss';
 require('typeface-encode-sans-condensed')
 
@@ -16,11 +15,23 @@ const ProductDetail = (props) => {
     } = props.product;
     const onWistList = () => {
         props.dispatch(addProductToWistList(props.product));
-        swal("Đã thêm vào danh sách yêu thích!", "You clicked the button!", "success")
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Đã thêm vào danh sách yêu thích',
+            showConfirmButton: false,
+            timer: 2000
+        })
     };
     const onCart = () => {
         props.dispatch(addProductToCart(props.product));
-        swal("Đã thêm vào giỏ hàng!", "You clicked the button!", "success")
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Đã thêm vào giỏ hàng',
+            showConfirmButton: false,
+            timer: 2000
+        })
 
     };
     return (

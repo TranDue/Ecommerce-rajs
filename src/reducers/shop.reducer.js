@@ -13,7 +13,6 @@ import { phones } from "../data/phones";
 const initialState = {
     products: phones,
     bills: bill,
-
     cart: [],
     wistlist: [],
     orderbill: []
@@ -129,6 +128,7 @@ const shopReducer = (state = initialState, action) => {
             updateOrderBill = [...state.orderbill];
             updateItemBill = updateOrderBill.findIndex(item => item.id === action.payload.id);
 
+
             if (updateItemBill < 0) {
                 updateOrderBill.push({ ...action.payload, quantity: 1 });
             } else {
@@ -139,6 +139,10 @@ const shopReducer = (state = initialState, action) => {
                 updatedItem2.quantity++;
                 updateOrderBill[updateItemBill] = updatedItem2;
             }
+            // const abc = { ...state, orderbill: updateOrderBill }
+
+            // console.log("test state", abc)
+
             return { ...state, orderbill: updateOrderBill };
 
         default:

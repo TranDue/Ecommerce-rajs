@@ -27,7 +27,7 @@ const Footer = () => {
                             <h5>Thông tin</h5>
                             <ul>
                                 <li><a href="/">Chăm sóc khách hàng</a></li>
-                                <li><a href="/">Liên hệ</a></li>
+                                <li><a href="/contact">Liên hệ</a></li>
                                 <li><a href="/">Trợ giúp</a></li>
                             </ul>
                         </div>
