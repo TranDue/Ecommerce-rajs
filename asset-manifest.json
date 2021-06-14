@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Ecommerce-rajs/static/css/main.860eb839.chunk.css",
+    "main.css": "/Ecommerce-rajs/static/css/main.d98e5607.chunk.css",
     "main.js": "/Ecommerce-rajs/static/js/main.5a346f70.chunk.js",
     "main.js.map": "/Ecommerce-rajs/static/js/main.5a346f70.chunk.js.map",
     "runtime-main.js": "/Ecommerce-rajs/static/js/runtime-main.7636acf7.js",
@@ -10,7 +10,7 @@
     "static/js/2.2ccc6377.chunk.js.map": "/Ecommerce-rajs/static/js/2.2ccc6377.chunk.js.map",
     "index.html": "/Ecommerce-rajs/index.html",
     "static/css/2.36c87c17.chunk.css.map": "/Ecommerce-rajs/static/css/2.36c87c17.chunk.css.map",
-    "static/css/main.860eb839.chunk.css.map": "/Ecommerce-rajs/static/css/main.860eb839.chunk.css.map",
+    "static/css/main.d98e5607.chunk.css.map": "/Ecommerce-rajs/static/css/main.d98e5607.chunk.css.map",
     "static/js/2.2ccc6377.chunk.js.LICENSE.txt": "/Ecommerce-rajs/static/js/2.2ccc6377.chunk.js.LICENSE.txt",
     "static/media/index.css": "/Ecommerce-rajs/static/media/encode-sans-condensed-latin-900.b2f80bc1.woff2"
   },
@@ -18,7 +18,7 @@
     "static/js/runtime-main.7636acf7.js",
     "static/css/2.36c87c17.chunk.css",
     "static/js/2.2ccc6377.chunk.js",
-    "static/css/main.860eb839.chunk.css",
+    "static/css/main.d98e5607.chunk.css",
     "static/js/main.5a346f70.chunk.js"
   ]
 }
