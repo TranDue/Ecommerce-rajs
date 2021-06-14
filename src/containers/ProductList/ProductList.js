@@ -10,7 +10,7 @@ import Pagination from "../../components/Pagination/Pagination";
 class ProductList extends Component {
 
     state = {
-        perPage: 12,
+        perPage: 20,
         currentPage: 1,
         pagesToShow: 4,
     };
@@ -38,10 +38,10 @@ class ProductList extends Component {
 
     render() {
         return (
-            <div className="col-lg-9">
+            <div data-aos="fade-right" className="col-lg-9">
                 <div className="row">
                     {paginationPipe(this.props.products, this.state).map(product => {
-                        return (<div className="col-lg-3 col-md-4 col-sm-4 col-6">
+                        return (<div key={product.id} className="col-lg-3 col-md-4 col-sm-4 col-6">
                             <Product key={product.id} product={product} />
                         </div>)
                     })}

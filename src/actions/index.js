@@ -15,45 +15,45 @@ export const addProductToWistList = product => {
         type: ADD_PRODUCT_TO_WISTLIST,
         payload: product
     }
-};
+}
 
 export const removeProductToWistList = productId => {
     return {
         type: REMOVE_PRODUCT_FROM_WISTLIST,
         payload: productId
     }
-};
+}
 
 export const addProductToCart = product => {
     return {
         type: ADD_PRODUCT_TO_CART,
         payload: product
     }
-};
+}
 
 export const removeProductToCart = productId => {
     return {
         type: REMOVE_PRODUCT_FROM_CART,
         payload: productId
     }
-};
+}
 
 export const incrementCartQuantity = productId => {
     return {
         type: INCREMENT_CART_ITEM_QUANTITY,
         payload: productId
     }
-};
+}
 
 export const decrementCartQuantity = productId => {
     return {
         type: DECREMENT_CART_ITEM_QUANTITY,
         payload: productId
     }
-};
+}
 
-export const ADD_BOOK_TO_FILTER = 'ADD_BOOK_TO_FILTER';
-export const REMOVE_BOOK_FROM_FILTER = 'REMOVE_BOOK_FROM_FILTER';
+export const ADD_BOOK_TO_FILTER = 'ADD_BOOK_TO_FILTER'
+export const REMOVE_BOOK_FROM_FILTER = 'REMOVE_BOOK_FROM_FILTER'
 
 
 export const addBrandToFilter = category => {
@@ -61,7 +61,7 @@ export const addBrandToFilter = category => {
         type: ADD_BOOK_TO_FILTER,
         category
     }
-};
+}
 
 
 export const removeBrandFromFilter = category => {
@@ -69,35 +69,35 @@ export const removeBrandFromFilter = category => {
         type: REMOVE_BOOK_FROM_FILTER,
         category
     }
-};
+}
 
-export const ORDER_BY_ASC = 'ORDER_BY_ASC';
-export const ORDER_BY_DESC = 'ORDER_BY_DESC';
-export const CLEAR_ORDER_BY_PRICE = 'CLEAR_ORDER_BY_PRICE';
+export const ORDER_BY_ASC = 'ORDER_BY_ASC'
+export const ORDER_BY_DESC = 'ORDER_BY_DESC'
+export const CLEAR_ORDER_BY_PRICE = 'CLEAR_ORDER_BY_PRICE'
 
 export const orderByAsc = () => {
     return {
         type: ORDER_BY_ASC
     }
-};
+}
 
 export const orderByDesc = () => {
     return {
         type: ORDER_BY_DESC
     }
-};
+}
 
 export const clearOrderBy = () => {
     return {
         type: CLEAR_ORDER_BY_PRICE
     }
-};
+}
 
 
-export const PREV_PAGE = 'PREV_PAGE';
-export const NEXT_PAGE = 'NEXT_PAGE';
-export const GO_PAGE = 'GO_PAGE';
-export const COUNT_ITEM = 'COUNT_ITEM';
+export const PREV_PAGE = 'PREV_PAGE'
+export const NEXT_PAGE = 'NEXT_PAGE'
+export const GO_PAGE = 'GO_PAGE'
+export const COUNT_ITEM = 'COUNT_ITEM'
 
 
 // pagination
@@ -105,27 +105,27 @@ export const nextPage = () => {
     return {
         type: NEXT_PAGE
     }
-};
+}
 
 export const prevPage = () => {
     return {
         type: PREV_PAGE
     }
-};
+}
 
 export const goPage = (n) => {
     return {
         type: GO_PAGE,
         currentPage: n
     }
-};
+}
 
 export const countItem = (n) => {
     return {
         type: COUNT_ITEM,
         totalItemsCount: n
     }
-};
+}
 
 
 export const addBillToOrderManagement = bill => {

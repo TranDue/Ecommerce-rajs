@@ -4,10 +4,8 @@ import { NavLink } from 'react-router-dom';
 import './Header.scss';
 import '../BrandFilter/BrandFilter.scss';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import { formatMoney } from "../../pipes/priceFormatter";
-import CartItem from '../CartItem/CartItem';
 import { userActions } from '../../actions/user.actions'
-
+import { formatMoney } from '../../pipes/priceFormatter'
 class Header extends React.Component {
     componentDidMount() {
         this.props.getUsers();
@@ -35,7 +33,7 @@ class Header extends React.Component {
                 <div className="header-top">
                     <div className="container">
 
-                        <div className="ht-left">
+                        <div data-aos="fade-right" className="ht-left">
                             <div className="logo-push">
                                 <div className="logo">
                                     <NavLink className="navbar-brand" to="/">Ecommerce</NavLink>
@@ -50,7 +48,7 @@ class Header extends React.Component {
                                 0123456677
                             </div>
                         </div>
-                        <div className="ht-right">
+                        <div data-aos="fade-left" className="ht-right">
                             {
                                 userLocalStorage ? <NavLink className="nav-link login-panel" to={"/homepage"}><i className="fa fa-user" />Xin chào {user.firstName} {user.lastName}</NavLink> :
                                     <NavLink className="nav-link login-panel" to={"/homepage"}><i className="fa fa-user" />Tài khoản</NavLink>
@@ -66,7 +64,11 @@ class Header extends React.Component {
                 </div>
 
 
-                <div className="container">
+                <div
+                    data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000"
+                    className="container">
                     <div className="inner-header">
                         <div className="row">
                             <div className="col-lg-2 col-md-2">
@@ -74,7 +76,7 @@ class Header extends React.Component {
                                     <NavLink className="navbar-brand" to="/">Ecommerce</NavLink>
                                 </div>
                             </div>
-                            <div className="col-lg-7 col-md-7 col-sm-10">
+                            <div className="col-lg-7 col-md-7 col-sm-10 col-xs-8">
                                 <div className="advanced-search">
                                     <form action="#" className="input-group">
                                         <input type="text" placeholder="Tìm sản phẩm bạn muốn?" />
@@ -83,24 +85,27 @@ class Header extends React.Component {
                                 </div>
                             </div>
 
-                            <div className="col-lg-3 text-right col-md-3 col-sm-2">
+                            <div className="col-lg-3 text-right col-md-3 col-sm-2 col-xs-4">
                                 <ul className="nav-right">
                                     <li className="heart-icon">
                                         <NavLink className="nav-link" to={"/wishlist"}><i className="fa fa-heart"
-                                            aria-hidden="true" /><span>Yêu thích</span></NavLink>
+                                            aria-hidden="true" /><span>&hearts;</span></NavLink>
                                     </li>
                                     <li className="cart-icon">
                                         <NavLink className="nav-link" to={"/cart"}><i className="fa fa-shopping-cart mr-2"
                                             aria-hidden="true" /><span>Giỏ hàng</span> {cartLength ? `(${cartLength})` : ''}</NavLink>
-                                        <div className="cart-hover">
+                                        <div className="cart-hover" style={{ zIndex: 2 }}>
                                             <div className="card-footer">
                                                 <div>
-                                                    Thành tiền: ${totalPrice}
+                                                    Thành tiền: <span style={{
+                                                        color: "red",
+                                                        fontWeight: "bold"
+                                                    }}>{formatMoney(totalPrice)}</span>
                                                 </div>
                                             </div>
-                                            <div className="select-button">
+                                            {/* <div className="select-button">
                                                 <NavLink className="primary-btn view-card nav-link" to="/cart">Xem giỏ hàng</NavLink>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </li>
                                 </ul>
@@ -111,14 +116,18 @@ class Header extends React.Component {
 
 
 
-                <div className="navbar-navigation">
+                <div
+                    data-aos="fade-right"
+                    data-aos-offset="600"
+                    data-aos-easing="ease-in-sine"
+                    className="navbar-navigation">
                     <div className="container-fluid">
                         <Navbar expand="lg" className="nav-item">
                             <Navbar.Brand href="#home">
                             </Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
-                                <Nav className="mr-auto  mobile-menu">
+                                <Nav data-aos="fade-down" className="mr-auto  mobile-menu">
                                     <li><NavLink to={"/"}>Trang chủ</NavLink></li>
                                     <li><NavLink to={"/shop"}>Tất cả sản phẩm</NavLink></li>
                                     <li><NavLink to={"/blog"}>Blog</NavLink></li>
@@ -144,17 +153,14 @@ const mapStateToProps = (state) => {
         wistlistItemCount: state.shop.wistlist.reduce((count, curItem) => {
             return count + curItem.quantity;
         }, 0),
-        totalPrice: state.shop.wistlist.reduce((count, curItem) => {
-            return count + (curItem.price * curItem.quantity);
-        }, 0),
-
-        wistlistLength: state.shop.wistlist.length,
 
         // handle cart
         cartItems: state.shop.cart,
         cartItemCount: state.shop.cart.reduce((count, curItem) => {
             return count + curItem.quantity;
         }, 0),
+
+        // quick check price
         totalPrice: state.shop.cart.reduce((count, curItem) => {
             return count + (curItem.price * curItem.quantity);
         }, 0),

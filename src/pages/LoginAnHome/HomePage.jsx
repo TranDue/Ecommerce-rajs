@@ -39,7 +39,12 @@ class HomePage extends React.Component {
                         } */}
 
                         </div>
-                        <div className="col-md-0 col-sm-0">
+                        <div
+                            data-aos="fade-left"
+                            data-aos-anchor="#example-anchor"
+                            data-aos-offset="700"
+                            data-aos-duration="700"
+                            className="col-md-0 col-sm-0">
                             <span>
                                 <Link className="btn btn-info" to="/userdetail"><i className="fa fa-cog"></i>Chi tiết tài khoản</Link>
                             </span>

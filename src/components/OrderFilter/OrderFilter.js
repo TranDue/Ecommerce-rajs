@@ -21,7 +21,6 @@ const OrderFilter = ({ dispatch }) => {
     const removeFilter = (e) => {
 
         const buttons = document.getElementsByName('orderByPrice');
-
         buttons.forEach(el => {
             el.checked = false;
         });
@@ -31,10 +30,10 @@ const OrderFilter = ({ dispatch }) => {
     };
 
     if (selected) {
-        removeSelected = <span onClick={removeFilter} className="text-remove-selected text-right">Xóa chọn</span>
+        removeSelected = <span onClick={removeFilter} className="text-remove-selected text-right">
+            <button type="button" class="btn btn-outline-danger">Bỏ chọn</button>
+        </span>
     }
-
-
 
     return (
         <div className="card">
@@ -44,7 +43,7 @@ const OrderFilter = ({ dispatch }) => {
             <ul className="list-group flex-row  flex-wrap" >
                 <li className="list-group-item flex-fill">
                     <label className="custom-radio-btn">Giá từ thấp tới cao
-                            <input
+                        <input
                             value={ORDER_BY_ASC}
                             type="radio"
                             onChange={handleRadioChange}
@@ -54,7 +53,7 @@ const OrderFilter = ({ dispatch }) => {
                 </li>
                 <li className="list-group-item flex-fill">
                     <label className="custom-radio-btn">Giá từ cao tới thấp
-                            <input
+                        <input
                             value={ORDER_BY_DESC}
                             onChange={handleRadioChange}
                             type="radio" name="orderByPrice" className="custom-radio-btn__input" />

@@ -18,12 +18,14 @@ function OrderManagement(props) {
             {props.billItemCount ? (
               props.billItems.map((orderbill) => (
                 <BillItem
-                  {...orderbill} a={orderbill.madh[0]}
+                  key={orderbill.id}
+                  {...orderbill}
                 />
               ))
             ) : (
-              <div className="continue row">
-                <div className="col-xs-12 col-sm-12 col-md-9 offset-md-1 col-lg-8 offset-lg-2 right-side">
+              <div
+                className="continue row">
+                <div data-aos="fade-right" className="col-xs-12 col-sm-12 col-md-9 offset-md-1 col-lg-8 offset-lg-2 right-side">
                   <h1 className="text-center">Bạn chưa có đơn hàng ... </h1>
                 </div>
               </div>
@@ -45,10 +47,6 @@ const mapStateToProps = state => {
     }, 0),
 
     // get cart item
-    cartItems: state.shop.cart,
-    cartItemCount: state.shop.cart.reduce((count, curItem) => {
-      return count + curItem.quantity;
-    }, 0),
     totalPrice: state.shop.cart.reduce((count, curItem) => {
       return count + (curItem.price * curItem.quantity);
     }, 0)

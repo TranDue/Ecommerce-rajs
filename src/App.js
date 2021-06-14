@@ -1,109 +1,119 @@
-import React, { Component } from "react";
-import { Provider, connect } from "react-redux";
-import { createStore } from "redux";
-import rootReducer from "./reducers";
-
+import React, { Component } from "react"
+import { connect } from "react-redux"
 import {
-    BrowserRouter,
     Switch,
     Route,
     Redirect,
     Router,
-} from "react-router-dom";
+} from "react-router-dom"
 
-import "./App.scss";
-import Home from "./pages/Home/Home";
-import Shop from "./pages/Shop/Shop";
+import "./App.scss"
+import Home from "./pages/Home/Home"
+import Shop from "./pages/Shop/Shop"
 
-import { history } from "./_helpers/history";
-import Blog from "./pages/Blog/Blog";
-import Register from "./pages/Register/Register";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import ProductDetail from "./pages/ProductDetail/ProductDetail";
-import ShoppingCart from "./pages/ShopingCart/ShoppingCart";
-import OrderAdress from "./pages/OrderAdress/OrderAdress";
-import Login from "./pages/Login/Login";
-import HomePage from "./pages/LoginAnHome/HomePage";
-import UserDetail from "./pages/UserDetail/UserDetail";
-import { alertActions } from "./actions/alert.actions";
-import { PrivateRoute } from "./components/PrivateRT/PrivateRoute";
-import Contact from "./pages/Contact/Contact";
-import Wishlist from "./pages/Wishlist/Wishlist";
-import OrderManagement from "./pages/OrderManagement/OrderManagement";
+import { history } from "./_helpers/history"
+import Blog from "./pages/Blog/Blog"
+import Register from "./pages/Register/Register"
+import Header from "./components/Header/Header"
+import Footer from "./components/Footer/Footer"
+import ProductDetail from "./pages/ProductDetail/ProductDetail"
+import ShoppingCart from "./pages/ShopingCart/ShoppingCart"
+import OrderAdress from "./pages/OrderAdress/OrderAdress"
+import Login from "./pages/Login/Login"
+import HomePage from "./pages/LoginAnHome/HomePage"
+import UserDetail from "./pages/UserDetail/UserDetail"
+import { alertActions } from "./actions/alert.actions"
+import { PrivateRoute } from "./components/PrivateRT/PrivateRoute"
+import Contact from "./pages/Contact/Contact"
+import Wishlist from "./pages/Wishlist/Wishlist"
+import OrderManagement from "./pages/OrderManagement/OrderManagement"
 
 class App extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         history.listen((location, action) => {
             // clear alert on location change
-            this.props.clearAlerts();
-        });
+            this.props.clearAlerts()
+        })
     }
     render() {
-        const { alert } = this.props;
+        const { alert } = this.props
         return (
             <div>
                 <Router history={history}>
                     <React.Fragment>
-                        <Header />
+                        <Header data-aos="fade-down" />
                         <Switch>
                             <Route
                                 exact
                                 path={"/"}
                                 render={() => {
-                                    return <Redirect to={"/products"} />;
+                                    return <Redirect to={"/products"} />
                                 }}
                             />
                             <Route
                                 exact
                                 path={"/order"}
                                 render={() => {
-                                    return <Redirect to={"/orderadress"} />;
+                                    return <Redirect to={"/orderadress"} />
                                 }}
                             />
+                            {/* page Contact */}
                             <Route exact path={"/contact"} component={Contact} />
-                            <PrivateRoute exact path="/homepage" component={HomePage} />
 
+                            {/* page after Login */}
+                            <PrivateRoute exact path="/homepage" component={props => <HomePage {...props} />} />
+
+                            {/* page Product Home */}
                             <Route exact path={"/products"} component={Home} />
-                            <Route exact path={"/userdetail"} component={UserDetail} />
 
+                            {/* page User Detail */}
+                            <Route exact path={"/userdetail"} component={props => <UserDetail {...props} />} />
+
+                            {/* page Order */}
                             <Route exact path={"/orderadress"} component={OrderAdress} />
+
+                            {/* page Shop. All product*/}
                             <Route exact path={"/shop"} component={Shop} />
 
-                            <Route exact path={"/Blog"} component={Blog} />
-                            <Route exact path={"/register"} component={Register} />
-                            <Route exact path={"/login"} component={Login} />
-                            <Route exact path={"/products/:id"} component={ProductDetail} />
+                            {/* page Blog */}
+                            <Route exact path={"/Blog"} component={props => <Blog {...props} />} />
 
-                            <Route exact path={"/cart"} component={ShoppingCart} />
+                            {/* page Register  */}
+                            <Route exact path={"/register"} component={props => <Register {...props} />} />
+
+                            {/* page Login */}
+                            <Route exact path={"/login"} component={props => <Login {...props} />} />
+
+                            {/* page Product Detail  */}
+                            <Route exact path={"/products/:id"} component={props => <ProductDetail {...props} />} />
+
+                            {/* page Cart */}
+                            <Route exact path={"/cart"} component={props => <ShoppingCart {...props} />} />
 
                             {/* Page wishlist */}
-                            <Route exact path={"/wishlist"} component={Wishlist} />
+                            <Route exact path={"/wishlist"} component={props => <Wishlist {...props} />} />
 
                             {/* Page order management */}
-                            <Route
-                                exact
-                                path={"/order-management"}
-                                component={OrderManagement}
-                            />
+                            <Route exact path={"/order-management"} component={props => <OrderManagement {...props} />} />
+
                         </Switch>
                         <Footer />
                     </React.Fragment>
                 </Router>
             </div>
-        );
+        )
     }
 }
 
 function mapState(state) {
-    const { alert } = state;
-    return { alert };
+    const { alert } = state
+    return { alert }
 }
 
 const actionCreators = {
     clearAlerts: alertActions.clear,
-};
+}
 
-export default connect(mapState, actionCreators)(App);
+export default connect(mapState, actionCreators)(App)

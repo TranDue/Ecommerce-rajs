@@ -22,4 +22,4 @@ export const userConstants = {
     DELETE_FAILURE: 'USERS_DELETE_FAILURE',
 
     EDIT_USER: 'USERS_EDITNAME'
-};
+}

@@ -1,5 +1,5 @@
 export const formatMoney = (price) => {
-    return price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
+    return price.toLocaleString('en-US', { style: 'currency', currency: 'VND' });
 };
 export const formatDate = (d) => {
     return d.toDateString()

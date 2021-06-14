@@ -17,7 +17,6 @@ const OrderItem = ({
     img,
     dispatch
 }) => {
-
     console.log("wistlist", id)
     const removeItem = () => {
         const swalWithBootstrapButtons = Swal.mixin({
@@ -67,61 +66,70 @@ const OrderItem = ({
         }
     }
     const onCart = () => {
-        swal("Chúng tôi sẽ sớm quay lại");
+        swal("Chúng tôi sẽ sớm quay lại", "", "");
         // props.dispatch(addProductToCart(props.product));
     };
     return (
-        <div className="row align-items-center mb-3">
-            <div className="col-12 col-sm-12 col-md-2 text-center">
-                <img
-                    className="img-responsive"
-                    src={img}
-                    style={{ height: "60%", width: "60%" }}
-                    alt={description}
-                />
-            </div>
-            <div className="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-                <h4 className="product-name">
-                    <strong>{shortenTitle(title)}</strong>
-                </h4>
-                <h4>
-                    <small className="product-description">{description}</small>
-                </h4>
-            </div>
-            <div className="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row product-quantity-container align-items-center">
-                <div
-                    className="col-6 col-sm-6 col-md-6 text-md-right"
-                    style={{ paddingTop: "5px" }}
-                >
-                    <h6>
-                        <strong>
-                            {formatMoney(price)}$ <span className="text-muted"></span>
-                        </strong>
-                    </h6>
+        <div>
+            <div
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                className="row align-items-center mb-3">
+                <div className="col-12 col-sm-12 col-md-2 text-center">
+                    <img
+                        className="img-responsive"
+                        src={img}
+                        style={{ height: "60%", width: "60%" }}
+                        alt={description}
+                    />
                 </div>
-                <div className="col-2 col-sm-2 col-md-2 text-right">
-                    <button
-                        style={{
-                            width: 100
-                        }}
-                        onClick={onCart}
-                        className="btn btn-warning  text-uppercase">
-                        <i className="fa fa-shopping-cart" />
-                    </button>
-                    <br />
-                    <br />
-                    <button
-                        onClick={removeItem}
-                        type="button"
-                        className="btn btn-outline-danger btn-xs"
-                        style={{
-                            width: 100
-                        }}
+                <div className="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
+                    <h4 className="product-name">
+                        <strong>{shortenTitle(title)}</strong>
+                    </h4>
+                    <h4>
+                        <small className="product-description">{description}</small>
+                    </h4>
+                </div>
+                <div className="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row product-quantity-container align-items-center">
+                    <div
+                        className="col-6 col-sm-6 col-md-6 text-md-right"
+                        style={{ paddingTop: "5px" }}
                     >
-                        Bỏ thích
-                    </button>
+                        <h6>
+                            <strong>
+                                {formatMoney(price)}<span className="text-muted"></span>
+                            </strong>
+                        </h6>
+                    </div>
+                    <div className="col-2 col-sm-2 col-md-2 text-right">
+                        <button
+                            style={{
+                                width: 100
+                            }}
+                            onClick={onCart}
+                            className="btn btn-warning  text-uppercase">
+                            <i className="fa fa-shopping-cart" />
+                        </button>
+                        <br />
+                        <br />
+                        <button
+                            onClick={removeItem}
+                            type="button"
+                            className="btn btn-outline-danger btn-xs"
+                            style={{
+                                width: 100
+                            }}
+                        >
+                            Bỏ thích
+                        </button>
+                    </div>
                 </div>
             </div>
+            <hr
+                style={{ borderColor: "black" }}
+                data-aos="fade-up"
+                data-aos-duration="3000" />
         </div>
     )
 }

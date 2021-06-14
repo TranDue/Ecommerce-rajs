@@ -36,7 +36,6 @@ class Pagination extends Component {
         this.props.onNextPage();
     }
 
-
     getPages = () => {
         const c = Math.ceil(this.props.totalItemsCount / this.props.perPage);
         const p = this.props.currentPage || 1;
@@ -60,11 +59,7 @@ class Pagination extends Component {
         return pages;
     }
 
-
-
-
     render() {
-
         console.log(this.props);
 
         const pages = this.getPages().map(pageNum => {
@@ -72,18 +67,32 @@ class Pagination extends Component {
             if (pageNum === this.props.currentPage) {
                 buttonClass += ' active';
             }
-            return (<li className={buttonClass} onClick={() => { this.onPage(pageNum) }}><button className="page-link" >{pageNum}</button></li>);
+            return (
+                <li
+                    key={buttonClass}
+                    className={buttonClass}
+                    onClick={() => { this.onPage(pageNum) }}
+                >
+                    <button className="page-link" >{pageNum}</button>
+                </li>
+            );
         });
 
         let prevButtonClass = 'page-item';
         if (this.props.currentPage === 1) {
             prevButtonClass += ' disabled';
         }
-        const prevButton = (<li className={prevButtonClass}>
-            <button
-                className="page-link" onClick={this.onPrev} tabIndex="-1">Previous</button>
-        </li>);
-
+        const prevButton = (
+            <li className={prevButtonClass}>
+                <button
+                    className="page-link"
+                    onClick={this.onPrev}
+                    tabIndex="-1"
+                >
+                    Previous
+                </button>
+            </li>
+        );
 
         let nextButtonClass = 'page-item';
         if (this.isOnLastPage()) {

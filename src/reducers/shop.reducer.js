@@ -135,7 +135,6 @@ const shopReducer = (state = initialState, action) => {
                 const updatedItem2 = {
                     ...updateOrderBill[updateItemBill]
                 };
-
                 updatedItem2.quantity++;
                 updateOrderBill[updateItemBill] = updatedItem2;
             }

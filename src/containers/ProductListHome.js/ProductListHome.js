@@ -9,7 +9,7 @@ import './ProductListHome.scss';
 class ProductListHome extends Component {
 
     state = {
-        perPage: 12,
+        perPage: 18,
         currentPage: 1,
         pagesToShow: 3,
     };
@@ -39,12 +39,15 @@ class ProductListHome extends Component {
 
 
         return (
-            <div className="col-lg-12 list-product">
+            <div
+                data-aos="fade-right"
+                data-aos-anchor-placement="top-bottom"
+                className="col-lg-12 list-product">
                 <h3 className="m-2">HighLights</h3>
-                <div className="row">
+                <div data-aos="zoom-in" className="row">
                     {paginationPipe(this.props.products, this.state).map(product => {
-                        return (<div className="col-lg-2 col-md-4 col-sm-6 col-6">
-                            <ProductList key={product.id} product={product} />
+                        return (<div key={product.id} className="col-lg-2 col-md-4 col-sm-6 col-6">
+                            <ProductList data-aos="zoom-in" product={product} />
                         </div>)
                     })}
                 </div>

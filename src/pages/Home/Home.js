@@ -4,12 +4,17 @@ import ProductListHome from '../../containers/ProductListHome.js/ProductListHome
 const Home = () => {
     return (
         <React.Fragment>
-            <did>
+            <div>
                 <SlideEffect></SlideEffect>
-            </did>
+            </div>
             <div className="container">
+                <br />
+                <br />
                 <div className="row">
-                    <ProductListHome />
+                    <ProductListHome
+                        data-aos="fade-up"
+                        data-aos-anchor-placement="top-bottom"
+                    />
                 </div>
             </div>
         </React.Fragment>

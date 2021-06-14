@@ -9,7 +9,7 @@ class Blog extends Component {
 
     render() {
         return (
-            <section className="blog-section spad">
+            <section data-aos="zoom-in" className="blog-section spad">
                 <div className="container">
                     <div className="row">
 
@@ -29,7 +29,9 @@ class Blog extends Component {
                                     <ul>
                                         {categorys.map(category => {
                                             return (
-                                                <li><a>{category}</a></li>
+                                                <li key={category}>
+                                                    <a>{category}</a>
+                                                </li>
                                             )
                                         })}
                                     </ul>
@@ -74,7 +76,7 @@ class Blog extends Component {
                                     <div className="tag-item">
                                         {categorys.map(category => {
                                             return (
-                                                <a>{category}</a>
+                                                <a key={category}>{category}</a>
                                             )
                                         })}
                                     </div>
@@ -91,7 +93,7 @@ class Blog extends Component {
                                             <NavLink className="nav-link " to="/">
                                                 {this.props.blogs.map(blog => {
                                                     return (
-                                                        <div>
+                                                        <div key={blog.id}>
                                                             <div className="row">
                                                                 <div className="col-lg-4 bi-pic">
                                                                     <img src={blog.images} />

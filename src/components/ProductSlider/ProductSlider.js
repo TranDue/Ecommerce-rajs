@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {cumulativeOffSet} from "../../utilities/cumulativeOffset"
+import React, { useState } from 'react';
+import { cumulativeOffSet } from "../../utilities/cumulativeOffset"
 import './ProductSlider.scss';
 
 const ProductSlider = (
@@ -48,12 +48,12 @@ const ProductSlider = (
                         ref={imageRef}
                         onMouseMove={handleImageChange}
                         onMouseOut={handleMouseOut}
-                        src={img}                      
+                        src={img}
                     /></a></div>
                 </div>
                 <div className="img-small-wrap">
-                    {images.map((img , i ) => (
-                        <div className="item-gallery" onClick={() => {changeImage(i)}}><img src={img}/></div>
+                    {images.map((img, i) => (
+                        <div key={img} className="item-gallery" onClick={() => { changeImage(i) }}><img src={img} /></div>
                     ))}
                 </div>
             </article>

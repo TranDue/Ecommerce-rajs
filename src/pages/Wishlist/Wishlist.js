@@ -18,12 +18,16 @@ const Wishlist = (props) => {
           <div className="card-body">
             {props.wistlistItemCount ? props.wistlistItems.map(wistlist => (
               <OrderItem {...wistlist} img={wistlist.images[0]} />
-            )) : <div className="continue row">
-              <div className="col-xs-12 col-sm-12 col-md-9 offset-md-1 col-lg-8 offset-lg-2 right-side">
-                <h1 className="text-center">Chưa có sản phẩm yêu thích</h1>
-                <button className="btn btn-warning "><NavLink className="nav-link" to="/shop">Tìm kiếm sản phẩm yêu thích</NavLink></button>
+            )) :
+              <div
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom"
+                className="continue row">
+                <div className="col-xs-12 col-sm-12 col-md-9 offset-md-1 col-lg-8 offset-lg-2 right-side">
+                  <h1 className="text-center">Chưa có sản phẩm yêu thích</h1>
+                  <button className="btn btn-warning "><NavLink className="nav-link" to="/shop">Tìm kiếm sản phẩm yêu thích</NavLink></button>
+                </div>
               </div>
-            </div>
             }
           </div>
         </div>

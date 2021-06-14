@@ -70,11 +70,13 @@ export default class EditUser extends Component {
     render() {
         return (
             <div>
-                <form>
-                    <h1>
+                <form
+                    data-aos="fade-down"
+                    data-aos-easing="linear"
+                    data-aos-duration="1200">
+                    <h1 data-aos="zoom-out-left">
                         Edit User
                     </h1>
-
                     <img style={{
                         verticalAlign: "middle",
                         width: 50,
@@ -108,6 +110,7 @@ export default class EditUser extends Component {
                             <label>Email</label>
                         </div>
                         <input
+                            name="email"
                             type="email"
                             className="form-control"
                             value={this.state.username}

@@ -24,8 +24,8 @@
         }
       }
       .ddArrow:before {
-        content: "3";
-        font-family: "ElegantIcons";
+        content: '3';
+        font-family: 'ElegantIcons';
         font-size: 14px;
         color: #636363;
         float: right;
@@ -65,7 +65,7 @@
 .header-top {
   display: flex;
   border-bottom: 1px solid #e5e5e5;
-  background-color: rgb(35, 32, 35);
+  background-color: rgb(70, 64, 70);
   .ht-left {
     float: left;
     .logo-push {
@@ -180,7 +180,7 @@
     }
   }
 }
-/* navright */
+/* nav right */
 .inner-header .nav-right {
   li {
     list-style: none;
@@ -277,5 +277,28 @@
   .navbar-light .navbar-nav .nav-link {
     color: white;
     font-size: 20px;
+  }
+}
+// Mobile : width <740px
+@media screen and (max-width: 739px) {
+  .nav-right {
+    display: flex;
+  }
+  .inner-header .nav-right .heart-icon {
+    display: block;
+  }
+}
+@media screen and (max-width: 576px) {
+  .col-xs-8 {
+    width: 55% !important;
+  }
+  .col-xs-4 {
+    width: 45% !important;
+  }
+}
+// Tablet : width >= 740px  and width < 1024px
+@media screen and (min-width: 740px) and (max-width: 1023px) {
+  .nav-right {
+    display: flex;
   }
 }

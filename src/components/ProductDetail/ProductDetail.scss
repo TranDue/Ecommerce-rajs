@@ -1,15 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed&display=swap');
 
-*{
-	font-family: 'Encode Sans Condensed', sans-serif;
+* {
+  font-family: 'Encode Sans Condensed', sans-serif;
 }
-@media only screen and (max-width: 575px){
-	.item-property{
-        display: none;
-        
+@media only screen and (max-width: 575px) {
+  .item-property {
+    display: none;
+  }
+}
+[data-aos='new-animation'] {
+  opacity: 0;
+  transition-property: transform, opacity;
+
+  &.aos-animate {
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    transform: translateX(100px);
+
+    &.aos-animate {
+      transform: translateX(0);
     }
+  }
 }
-.item-property{
-    
-    
+[data-aos] {
+  body[data-aos-easing='new-easing'] &,
+  &[data-aos][data-aos-easing='new-easing'] {
+    transition-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  }
 }
+
+$aos-distance: 200px; // It has to be above import
+@import 'node_modules/aos/src/sass/aos.scss';

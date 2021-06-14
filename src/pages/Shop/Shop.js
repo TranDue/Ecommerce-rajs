@@ -4,10 +4,15 @@ import ProductList from "../../containers/ProductList/ProductList";
 const Shop = () => {
     return (
         <React.Fragment>
-            <div className="container" style={{paddingTop: '6rem'}} >
+            <div
+                data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1200"
+                className="container"
+                style={{ paddingTop: '6rem' }} >
                 <div className="row">
-                    <FilterBar/>
-                    <ProductList/>
+                    <FilterBar data-aos="fade-right" />
+                    <ProductList data-aos="fade-left" />
                 </div>
             </div>
         </React.Fragment>

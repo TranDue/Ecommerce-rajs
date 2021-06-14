@@ -38,21 +38,33 @@ class UserDetail extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 col-sm-12 ">
-                            <h3>Chi tiết tài khoản: </h3>
-                            <div onClick={() => this.openModal()}>
-                                <button type="button" className="btn btn-outline-info">Edit user</button>
+                            <h2>Chi tiết tài khoản: </h2>
+                            <div>
+                                <button
+                                    onClick={() => this.openModal()}
+                                    type="button"
+                                    className="btn btn-outline-info">
+                                    Edit user
+                                </button>
                                 <Modal
+                                    ariaHideApp={false}
                                     isOpen={this.state.modalIsOpen}
                                     onRequestClose={this.closeModal}
                                 >
                                     <EditUser className="modalConfig" />
                                 </Modal>
+
                             </div>
                             <br />
-                            <dd>
-                                <dt>User name: {user.firstName} {user.lastName}</dt>
-                                <dt>Email: {user.username}</dt>
-                            </dd>
+                            <ul component={'span'} variant={'body2'}>
+                                <li
+                                    data-aos="fade-up-right"
+                                    component={'span'}
+                                    variant={'body2'}>User name: <b>{user.firstName} {user.lastName}</b></li>
+                                <li data-aos="fade-up-right"
+                                    component={'span'}
+                                    variant={'body2'}>Email: <b>{user.username}</b></li>
+                            </ul>
                             {/* <h3>All registered users:</h3> */}
                             {/* {users.loading && <em>Loading users...</em>}
                         {users.error && <span className="text-danger">ERROR: {users.error}</span>} */}
