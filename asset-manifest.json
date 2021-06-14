@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Ecommerce-rajs/static/css/main.19aee52c.chunk.css",
+    "main.js": "/Ecommerce-rajs/static/js/main.5a346f70.chunk.js",
+    "main.js.map": "/Ecommerce-rajs/static/js/main.5a346f70.chunk.js.map",
+    "runtime-main.js": "/Ecommerce-rajs/static/js/runtime-main.7636acf7.js",
+    "runtime-main.js.map": "/Ecommerce-rajs/static/js/runtime-main.7636acf7.js.map",
+    "static/css/2.36c87c17.chunk.css": "/Ecommerce-rajs/static/css/2.36c87c17.chunk.css",
+    "static/js/2.2ccc6377.chunk.js": "/Ecommerce-rajs/static/js/2.2ccc6377.chunk.js",
+    "static/js/2.2ccc6377.chunk.js.map": "/Ecommerce-rajs/static/js/2.2ccc6377.chunk.js.map",
+    "index.html": "/Ecommerce-rajs/index.html",
+    "static/css/2.36c87c17.chunk.css.map": "/Ecommerce-rajs/static/css/2.36c87c17.chunk.css.map",
+    "static/css/main.19aee52c.chunk.css.map": "/Ecommerce-rajs/static/css/main.19aee52c.chunk.css.map",
+    "static/js/2.2ccc6377.chunk.js.LICENSE.txt": "/Ecommerce-rajs/static/js/2.2ccc6377.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Ecommerce-rajs/static/media/encode-sans-condensed-latin-900.b2f80bc1.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7636acf7.js",
+    "static/css/2.36c87c17.chunk.css",
+    "static/js/2.2ccc6377.chunk.js",
+    "static/css/main.19aee52c.chunk.css",
+    "static/js/main.5a346f70.chunk.js"
+  ]
+}
