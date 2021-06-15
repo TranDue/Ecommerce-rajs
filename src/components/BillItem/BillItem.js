@@ -28,9 +28,7 @@ const BillItem = ({
                 data-aos-anchor-placement="center-bottom"
                 className="row align-items-center mb-3">
                 <div className="col-12 col-sm-12 col-md-2 text-center">
-                    <h5 style={{
-                        marginTop: -82
-                    }}>
+                    <h5>
                         <strong>Mã đơn hàng</strong>
                     </h5>
                     <h5>
@@ -72,9 +70,7 @@ const BillItem = ({
                 </h5> */}
                 </div>
                 <div className="col-12 col-sm-12 col-md-2 text-center">
-                    <h5 style={{
-                        marginTop: -82
-                    }}>
+                    <h5>
                         <strong>Tên sản phẩm</strong>
                     </h5>
                     <h5>
@@ -88,9 +84,7 @@ const BillItem = ({
                         className="col-6 col-sm-6 col-md-6 text-md-right"
                         style={{ paddingTop: "5px" }}
                     >
-                        <h5 style={{
-                            marginTop: -82
-                        }}>
+                        <h5>
                             <strong>Giá tiền</strong>
                         </h5>
                         <h6>
