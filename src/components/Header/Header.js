@@ -44,7 +44,7 @@ class Header extends React.Component {
                 <div className="header-top">
                     <div className="container">
 
-                        <div data-aos="fade-right" className="ht-left">
+                        <div className="ht-left">
                             <div className="logo-push">
                                 <div className="logo">
                                     <NavLink className="navbar-brand" to="/">Ecommerce</NavLink>
@@ -127,18 +127,14 @@ class Header extends React.Component {
 
 
 
-                <div
-                    data-aos="fade-right"
-                    data-aos-offset="600"
-                    data-aos-easing="ease-in-sine"
-                    className="navbar-navigation">
+                <div className="navbar-navigation">
                     <div className="container-fluid">
                         <Navbar expand="lg" className="nav-item">
                             <Navbar.Brand href="#home">
                             </Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
-                                <Nav data-aos="fade-down" className="mr-auto  mobile-menu">
+                                <Nav className="mr-auto  mobile-menu">
                                     <li><NavLink to={"/"}>Trang chủ</NavLink></li>
                                     <li><NavLink to={"/shop"}>Tất cả sản phẩm</NavLink></li>
                                     <li><NavLink to={"/blog"}>Blog</NavLink></li>
