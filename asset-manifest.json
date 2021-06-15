@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.5f5c5137.chunk.css",
-    "main.js": "/static/js/main.491258a7.chunk.js",
-    "main.js.map": "/static/js/main.491258a7.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.058079ac.js",
-    "runtime-main.js.map": "/static/js/runtime-main.058079ac.js.map",
-    "static/css/2.b8c7a9f2.chunk.css": "/static/css/2.b8c7a9f2.chunk.css",
-    "static/js/2.1b2f8975.chunk.js": "/static/js/2.1b2f8975.chunk.js",
-    "static/js/2.1b2f8975.chunk.js.map": "/static/js/2.1b2f8975.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.b8c7a9f2.chunk.css.map": "/static/css/2.b8c7a9f2.chunk.css.map",
-    "static/css/main.5f5c5137.chunk.css.map": "/static/css/main.5f5c5137.chunk.css.map",
-    "static/js/2.1b2f8975.chunk.js.LICENSE.txt": "/static/js/2.1b2f8975.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/static/media/encode-sans-condensed-latin-900.b2f80bc1.woff2"
+    "main.css": "/Ecommerce-rajs/static/css/main.5f5c5137.chunk.css",
+    "main.js": "/Ecommerce-rajs/static/js/main.491258a7.chunk.js",
+    "main.js.map": "/Ecommerce-rajs/static/js/main.491258a7.chunk.js.map",
+    "runtime-main.js": "/Ecommerce-rajs/static/js/runtime-main.7636acf7.js",
+    "runtime-main.js.map": "/Ecommerce-rajs/static/js/runtime-main.7636acf7.js.map",
+    "static/css/2.36c87c17.chunk.css": "/Ecommerce-rajs/static/css/2.36c87c17.chunk.css",
+    "static/js/2.1b2f8975.chunk.js": "/Ecommerce-rajs/static/js/2.1b2f8975.chunk.js",
+    "static/js/2.1b2f8975.chunk.js.map": "/Ecommerce-rajs/static/js/2.1b2f8975.chunk.js.map",
+    "index.html": "/Ecommerce-rajs/index.html",
+    "static/css/2.36c87c17.chunk.css.map": "/Ecommerce-rajs/static/css/2.36c87c17.chunk.css.map",
+    "static/css/main.5f5c5137.chunk.css.map": "/Ecommerce-rajs/static/css/main.5f5c5137.chunk.css.map",
+    "static/js/2.1b2f8975.chunk.js.LICENSE.txt": "/Ecommerce-rajs/static/js/2.1b2f8975.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Ecommerce-rajs/static/media/encode-sans-condensed-latin-900.b2f80bc1.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.058079ac.js",
-    "static/css/2.b8c7a9f2.chunk.css",
+    "static/js/runtime-main.7636acf7.js",
+    "static/css/2.36c87c17.chunk.css",
     "static/js/2.1b2f8975.chunk.js",
     "static/css/main.5f5c5137.chunk.css",
     "static/js/main.491258a7.chunk.js"
