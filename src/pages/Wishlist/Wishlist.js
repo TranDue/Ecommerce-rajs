@@ -17,7 +17,7 @@ const Wishlist = (props) => {
 
           <div className="card-body">
             {props.wistlistItemCount ? props.wistlistItems.map(wistlist => (
-              <OrderItem {...wistlist} img={wistlist.images[0]} />
+              <OrderItem key={wistlist.id} {...wistlist} img={wistlist.images[0]} />
             )) :
               <div
                 data-aos="fade-up"

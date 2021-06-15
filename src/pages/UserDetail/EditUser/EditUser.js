@@ -111,7 +111,6 @@ export default class EditUser extends Component {
                         </div>
                         <input
                             name="email"
-                            type="email"
                             className="form-control"
                             value={this.state.username}
                             onChange={this.onChanguserName}

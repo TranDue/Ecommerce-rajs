@@ -1,1 +1,1 @@
-export const categorys = ["java","spring","sql","docker","kubernate","react.js","node.js"];
+export const categorys = ["java", "spring", "docker", "react.js"];

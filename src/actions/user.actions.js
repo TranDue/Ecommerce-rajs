@@ -48,6 +48,13 @@ function register(user) {
                 user => {
                     dispatch(success())
                     history.push('/login')
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Đăng ký thành công',
+                        showConfirmButton: false,
+                        timer: 2000
+                    })
                     dispatch(alertActions.success('Đăng ký thành công'))
                 },
                 error => {

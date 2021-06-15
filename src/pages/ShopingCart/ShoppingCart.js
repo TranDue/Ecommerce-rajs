@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { formatMoney } from "../../pipes/priceFormatter"
 import CartItem from "../../components/CartItem/CartItem"
 import { NavLink } from 'react-router-dom'
-import { useSelector } from 'react-redux';
 
 // import axios from 'axios'
 import * as axios from 'axios'
@@ -11,10 +10,8 @@ import * as axios from 'axios'
 import './ShoppingCart.scss'
 
 const ShoppingCart = (props) => {
+    // payment with momo
     const paymentMomo = () => {
-
-        console.log("this price >>>>>>", props.totalPrice.toString())
-
         // endpoint payment momo
         const endpoint = "https://test-payment.momo.vn/gw_payment/transactionProcessor"
         const hostname = "https://test-payment.momo.vn"
@@ -138,20 +135,6 @@ const ShoppingCart = (props) => {
                         </div>
                     </div>
 
-                    <div className="couple">
-                        <div className="row">
-                            <div className="col-xs-12 col-sm-5 offset-sm-7 col-md-4 offset-md-8 right-side">
-                                <form name="discount-form" id="discount-form">
-                                    <div className="input-group">
-                                        <input className="form-control" type="text" id="code" name="code" placeholder="Mã giảm giá" />
-                                        <span className="input-group-btn">
-                                            <button className="btn btn-default" type="submit" id="applyDiscountButton" >Đồng ý</button>
-                                        </span>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
                     <div className="checkout">
                         <div className="row">
                             <div className="col-xs-12 col-sm-5 offset-sm-7 col-md-4 offset-md-8 right-side">
@@ -176,10 +159,6 @@ const ShoppingCart = (props) => {
     )
 
 }
-
-// payment with momo
-
-
 
 const mapStateToProps = state => {
     console.log(state, 'state has changed')

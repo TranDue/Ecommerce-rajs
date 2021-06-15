@@ -19,7 +19,6 @@ const CartItem = ({
   img,
   dispatch,
 }) => {
-  console.log(id)
   const [itemQuantity, setItemQuantity] = useState(quantity)
 
   const removeItem = () => {

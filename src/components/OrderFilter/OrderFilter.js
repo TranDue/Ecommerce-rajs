@@ -31,7 +31,7 @@ const OrderFilter = ({ dispatch }) => {
 
     if (selected) {
         removeSelected = <span onClick={removeFilter} className="text-remove-selected text-right">
-            <button type="button" class="btn btn-outline-danger">Bỏ chọn</button>
+            <button type="button" className="btn btn-outline-danger">Bỏ chọn</button>
         </span>
     }
 

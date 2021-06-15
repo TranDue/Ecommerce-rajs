@@ -43,7 +43,7 @@ class App extends Component {
             <div>
                 <Router history={history}>
                     <React.Fragment>
-                        <Header data-aos="fade-down" />
+                        <Header />
                         <Switch>
                             <Route
                                 exact
@@ -72,7 +72,7 @@ class App extends Component {
                             <Route exact path={"/userdetail"} component={props => <UserDetail {...props} />} />
 
                             {/* page Order */}
-                            <Route exact path={"/orderadress"} component={OrderAdress} />
+                            <Route exact path={"/orderadress"} component={props => <OrderAdress {...props} />} />
 
                             {/* page Shop. All product*/}
                             <Route exact path={"/shop"} component={Shop} />

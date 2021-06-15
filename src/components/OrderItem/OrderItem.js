@@ -17,7 +17,6 @@ const OrderItem = ({
     img,
     dispatch
 }) => {
-    console.log("wistlist", id)
     const removeItem = () => {
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {

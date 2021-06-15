@@ -1,5 +1,7 @@
 import React from 'react';
-import { Formik, Field } from "formik";
+import { Formik } from "formik";
+import { connect } from 'react-redux'
+
 import {
     addBillToOrderManagement
 } from '../../actions'
@@ -10,11 +12,24 @@ import Swal from 'sweetalert2'
 
 // const idUser = JSON.parse()
 
-const OrderAdress = () => {
+const OrderAdress = (props) => {
+
+    // format date
     var dateFormat = require("dateformat");
 
     const dispatch = useDispatch()
     const cartItem = useSelector(state => state.shop)
+
+
+    // loop for get all title
+    const _title = cartItem.cart
+    var a = ""
+    for (let tl of _title) {
+        console.log("title >>>>", a += tl.title)
+    }
+    var _allTitle = a
+    console.log("abc", _allTitle)
+
     const _submit = (values) => {
         dispatch(addBillToOrderManagement(values))
     }
@@ -25,29 +40,30 @@ const OrderAdress = () => {
                 <h2 className="text-center m-3">Đơn đặt hàng</h2>
                 <Formik
                     initialValues={{
+
                         id: Math.floor(Math.random() * 10000),
                         name: "",
                         sdt: "",
                         address: "",
                         d: dateFormat(new Date(), "dddd, mmmm dS, yyyy"),
                         madh: Math.floor(Math.random(10) * 10000),
-                        // title: cartItem.cart[0].title,
-                        title: cartItem.cart[0].title,
-                        price: (cartItem.cart[0].price) * (cartItem.cart[0].quantity)
+                        title: _allTitle,
+                        // title:
+                        //     <h1 render={cartItems => (
+                        //         <h3>{cartItems.title}</h3>
+                        //     )}></h1>
+                        // ,
+
+                        price: props.totalPrice.toString()
                     }}
                     onSubmit={(values, { setSubmitting }) => {
                         setTimeout(() => {
                             // alert order success
-                            // Swal.fire({
-                            //     position: 'top-end',
-                            //     icon: 'success',
-                            //     title: '<a href="//sweetalert2.github.io">Đặt hàng thành công</a>',
-                            //     showConfirmButton: false,
-                            //     timer: 3400,
-
-                            // })
                             Swal.fire({
-                                title: 'Đặt hàng thành công' + '.' + '<a href="http://localhost:3000/order-management">Xem đơn hàng</a>',
+                                title:
+                                    'Đặt hàng thành công' +
+                                    '<br />' +
+                                    '<a href="http://localhost:3000/order-management">Xem đơn hàng</a>',
                                 icon: 'success',
                                 showClass: {
                                     popup: 'animate__animated animate__fadeInDown'
@@ -57,11 +73,8 @@ const OrderAdress = () => {
                                 }
                             })
                             _submit(values)
-
                             console.log("History order", values);
-
                             setSubmitting(false);
-
                         }, 1000);
                     }}
                     validationSchema={Yup.object().shape({
@@ -179,5 +192,14 @@ const OrderAdress = () => {
         </div >
     )
 }
+const mapStateToProps = state => {
+    console.log(state, 'state has total price')
+    return {
+        cartItems: state.shop.cart,
+        totalPrice: state.shop.cart.reduce((count, curItem) => {
+            return count + (curItem.price * curItem.quantity)
+        }, 0)
+    }
+}
 
-export default OrderAdress;
+export default connect(mapStateToProps, null)(OrderAdress);

@@ -113,57 +113,8 @@ export const phones = [{
     "ISBN": "978-1260440232",
     "id": 10,
     "description": "Đây là sách nền tảng cho các bạn học về java như những khái niệm của OOP, hiểu về các luồng chạy trong chương trình"
-}, {
-    "title": "Java The Complete Reference ",
-    "category": "java",
-    "images": ["https://www.journaldev.com/wp-content/uploads/2014/11/Java-The-Complete-Reference.png"],
-    "price": 50000,
-    "Author": "Herbert Schildt",
-    "date": "06/02/2021",
-    "ISBN": "978-1260440232",
-    "id": 11,
-    "description": "Đây là sách nền tảng cho các bạn học về java như những khái niệm của OOP, hiểu về các luồng chạy trong chương trình"
-}, {
-    "title": "Java The Complete Reference ",
-    "category": "java",
-    "images": ["https://www.journaldev.com/wp-content/uploads/2014/11/Java-The-Complete-Reference.png"],
-    "price": 50000,
-    "Author": "Herbert Schildt",
-    "date": "06/02/2021",
-    "ISBN": "978-1260440232",
-    "id": 12,
-    "description": "Đây là sách nền tảng cho các bạn học về java như những khái niệm của OOP, hiểu về các luồng chạy trong chương trình"
-}, {
-    "title": "Java The Complete Reference ",
-    "category": "Java",
-    "images": ["https://www.journaldev.com/wp-content/uploads/2014/11/Java-The-Complete-Reference.png"],
-    "price": 50000,
-    "Author": "Herbert Schildt",
-    "date": "06/02/2021",
-    "ISBN": "978-1260440232",
-    "id": 13,
-    "description": "Đây là sách nền tảng cho các bạn học về java như những khái niệm của OOP, hiểu về các luồng chạy trong chương trình"
-}, {
-    "title": "Java The Complete Reference ",
-    "category": "java",
-    "images": ["https://www.journaldev.com/wp-content/uploads/2014/11/Java-The-Complete-Reference.png"],
-    "price": 50000,
-    "Author": "Herbert Schildt",
-    "date": "06/02/2021",
-    "ISBN": "978-1260440232",
-    "id": 14,
-    "description": "Đây là sách nền tảng cho các bạn học về java như những khái niệm của OOP, hiểu về các luồng chạy trong chương trình"
-}, {
-    "title": "Java The Complete Reference ",
-    "category": "java",
-    "images": ["https://www.journaldev.com/wp-content/uploads/2014/11/Java-The-Complete-Reference.png"],
-    "price": 50000,
-    "Author": "Herbert Schildt",
-    "date": "06/02/2021",
-    "ISBN": "978-1260440232",
-    "id": 15,
-    "description": "Đây là sách nền tảng cho các bạn học về java như những khái niệm của OOP, hiểu về các luồng chạy trong chương trình"
-}, {
+},
+{
     "title": "Java The Complete Reference ",
     "category": "java",
     "images": ["https://www.journaldev.com/wp-content/uploads/2014/11/Java-The-Complete-Reference.png"],
@@ -205,17 +156,6 @@ export const phones = [{
     "date": "06/02/2021",
     "ISBN": "978-1260440232",
     "id": 19,
-    "description": "Đây là sách nền tảng cho các bạn học về java như những khái niệm của OOP, hiểu về các luồng chạy trong chương trình"
-},
-{
-    "title": "Pro Docker",
-    "category": "docker",
-    "images": ["https://images.viblo.asia/0414995a-f04a-48e3-8ff2-508fc6973e27.png"],
-    "price": 250000,
-    "Author": "Herbert Schildt",
-    "date": "06/02/2021",
-    "ISBN": "978-1260440232",
-    "id": 20,
     "description": "Đây là sách nền tảng cho các bạn học về java như những khái niệm của OOP, hiểu về các luồng chạy trong chương trình"
 },
 {
@@ -288,66 +228,6 @@ export const phones = [{
     "date": "06/02/2021",
     "ISBN": "978-1260440232",
     "id": 27,
-    "description": "Đây là sách nền tảng cho các bạn học về java như những khái niệm của OOP, hiểu về các luồng chạy trong chương trình"
-}, {
-    "title": "Java The Complete Reference ",
-    "category": "java",
-    "images": ["https://www.journaldev.com/wp-content/uploads/2014/11/Java-The-Complete-Reference.png"],
-    "price": 50000,
-    "Author": "Herbert Schildt",
-    "date": "06/02/2021",
-    "ISBN": "978-1260440232",
-    "id": 28,
-    "description": "Đây là sách nền tảng cho các bạn học về java như những khái niệm của OOP, hiểu về các luồng chạy trong chương trình"
-}, {
-    "title": "Java The Complete Reference ",
-    "category": "java",
-    "images": ["https://www.journaldev.com/wp-content/uploads/2014/11/Java-The-Complete-Reference.png"],
-    "price": 50000,
-    "Author": "Herbert Schildt",
-    "date": "06/02/2021",
-    "ISBN": "978-1260440232",
-    "id": 29,
-    "description": "Đây là sách nền tảng cho các bạn học về java như những khái niệm của OOP, hiểu về các luồng chạy trong chương trình"
-}, {
-    "title": "Java The Complete Reference ",
-    "category": "Java",
-    "images": ["https://www.journaldev.com/wp-content/uploads/2014/11/Java-The-Complete-Reference.png"],
-    "price": 50000,
-    "Author": "Herbert Schildt",
-    "date": "06/02/2021",
-    "ISBN": "978-1260440232",
-    "id": 30,
-    "description": "Đây là sách nền tảng cho các bạn học về java như những khái niệm của OOP, hiểu về các luồng chạy trong chương trình"
-}, {
-    "title": "Java The Complete Reference ",
-    "category": "java",
-    "images": ["https://www.journaldev.com/wp-content/uploads/2014/11/Java-The-Complete-Reference.png"],
-    "price": 50000,
-    "Author": "Herbert Schildt",
-    "date": "06/02/2021",
-    "ISBN": "978-1260440232",
-    "id": 31,
-    "description": "Đây là sách nền tảng cho các bạn học về java như những khái niệm của OOP, hiểu về các luồng chạy trong chương trình"
-}, {
-    "title": "Java The Complete Reference ",
-    "category": "java",
-    "images": ["https://www.journaldev.com/wp-content/uploads/2014/11/Java-The-Complete-Reference.png"],
-    "price": 50000,
-    "Author": "Herbert Schildt",
-    "date": "06/02/2021",
-    "ISBN": "978-1260440232",
-    "id": 15,
-    "description": "Đây là sách nền tảng cho các bạn học về java như những khái niệm của OOP, hiểu về các luồng chạy trong chương trình"
-}, {
-    "title": "Java The Complete Reference ",
-    "category": "java",
-    "images": ["https://www.journaldev.com/wp-content/uploads/2014/11/Java-The-Complete-Reference.png"],
-    "price": 50000,
-    "Author": "Herbert Schildt",
-    "date": "06/02/2021",
-    "ISBN": "978-1260440232",
-    "id": 16,
     "description": "Đây là sách nền tảng cho các bạn học về java như những khái niệm của OOP, hiểu về các luồng chạy trong chương trình"
 }
 ]

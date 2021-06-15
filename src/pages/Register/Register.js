@@ -35,13 +35,7 @@ class Register extends React.Component {
         this.setState({ submitted: true });
         const { user } = this.state;
         if (user.firstName && user.lastName && user.username && user.password) {
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Đăng ký thành công',
-                showConfirmButton: false,
-                timer: 2000
-            })
+
             this.props.register(user);
         }
     }

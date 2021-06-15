@@ -30,10 +30,6 @@ const SlideEffect = () => {
                         zIndex: -10
                     }}
                 />
-
-                <Carousel.Caption>
-                    <h3>Trải nghiệm thôi</h3>
-                </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
 

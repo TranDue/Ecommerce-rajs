@@ -51,9 +51,10 @@ const ProductSlider = (
                         src={img}
                     /></a></div>
                 </div>
+
                 <div className="img-small-wrap">
                     {images.map((img, i) => (
-                        <div key={img} className="item-gallery" onClick={() => { changeImage(i) }}><img src={img} /></div>
+                        <div key={img} className="item-gallery" onClick={() => { changeImage(i) }}><img src={img} alt="loading" /></div>
                     ))}
                 </div>
             </article>

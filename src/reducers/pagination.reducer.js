@@ -1,7 +1,7 @@
 import { COUNT_ITEM, GO_PAGE, NEXT_PAGE, PREV_PAGE } from "../actions";
 
 const initialState = {
-    perPage: 12,
+    perPage: 18,
     currentPage: 1,
     pagesToShow: 3,
     totalItemsCount: 0

@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect, useSelector } from "react-redux";
 import { formatMoney } from "../../pipes/priceFormatter"
-import { shortenTitle } from "../../pipes/shortenTitle"
 
 const BillItem = ({
     name,
@@ -16,6 +15,11 @@ const BillItem = ({
     p
     // quantity
 }) => {
+    const billDetail = () => {
+        alert("dậy mày")
+    }
+    console.log("management >>>>>>>>>>>", title)
+
     return (
         // list bill in order management
         <div>
@@ -30,9 +34,17 @@ const BillItem = ({
                         <strong>Mã đơn hàng</strong>
                     </h5>
                     <h5>
-                        <small><a style={{
-                            color: "blue"
-                        }}>{madh}</a></small>
+                        <small>
+                            <a
+                                onClick={billDetail}
+                                style={{
+                                    color: "blue",
+                                    cursor: "pointer"
+                                }}
+                            >
+                                {madh}
+                            </a>
+                        </small>
                     </h5>
                 </div>
                 <div className="col-12 text-sm-center col-sm-12 text-md-left col-md-4">
@@ -67,7 +79,7 @@ const BillItem = ({
                     </h5>
                     <h5>
                         <small>
-                            {shortenTitle(title)}
+                            {title}
                         </small>
                     </h5>
                 </div>
@@ -85,7 +97,7 @@ const BillItem = ({
                             <strong>
                                 <span style={{
                                     color: "red"
-                                }}> {formatMoney(price)}</span>
+                                }}> {formatMoney(price)} đ</span>
                                 &nbsp;
                             </strong>
                         </h6>

@@ -91,13 +91,8 @@ const ExpansionPn = (props) => {
           >
             <Typography component={'div'}>
               <div className="credit">
-                <i className="fa fa-cc-visa"></i>  &nbsp;
-                <i className="fa fa-credit-card"></i>  &nbsp;
-                <img style={{
-                  marginTop: -10
-                }} className="method" src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/checkout/icon-payment-method-mo-mo.svg" alt="momo" />
+                <img className="method" src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/checkout/icon-payment-method-mo-mo.svg" alt="momo" />
               </div>
-
             </Typography>
           </AccordionSummary>
         </Accordion>

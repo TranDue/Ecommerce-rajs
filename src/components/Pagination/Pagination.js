@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
 import { goPage, nextPage, prevPage } from "../../actions";
 
 class Pagination extends Component {
@@ -87,7 +86,6 @@ class Pagination extends Component {
                 <button
                     className="page-link"
                     onClick={this.onPrev}
-                    tabIndex="-1"
                 >
                     Previous
                 </button>
@@ -117,12 +115,4 @@ class Pagination extends Component {
         );
     }
 }
-
-const mapStateToProps = (state) => {
-    return {
-        ...state.pagination,
-        totalItemsCount: state.shop.products.length,
-    }
-};
-
 export default Pagination;

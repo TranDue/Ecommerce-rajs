@@ -10,7 +10,7 @@ import Pagination from "../../components/Pagination/Pagination";
 class ProductList extends Component {
 
     state = {
-        perPage: 20,
+        perPage: 16,
         currentPage: 1,
         pagesToShow: 4,
     };

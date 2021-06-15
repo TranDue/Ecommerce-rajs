@@ -22,6 +22,17 @@ class Header extends React.Component {
     getUserLocalStorage() {
         return JSON.parse(localStorage.getItem('user'));
     }
+    submitSearch() {
+        Swal.fire({
+            title: 'Comming Soon',
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
+    }
     render() {
         const { user, users } = this.props;
         const cartLength = this.getlegth();
@@ -77,7 +88,7 @@ class Header extends React.Component {
                                 </div>
                             </div>
                             <div className="col-lg-7 col-md-7 col-sm-10 col-xs-8">
-                                <div className="advanced-search">
+                                <div onClick={this.submitSearch} className="advanced-search">
                                     <form action="#" className="input-group">
                                         <input type="text" placeholder="Tìm sản phẩm bạn muốn?" />
                                         <button type="button"><i className="fa fa-search"></i></button>
